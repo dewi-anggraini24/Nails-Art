@@ -6,8 +6,8 @@ backend:
   name: git-gateway
   branch: main # Change to 'master' if your default branch is master
 
-# Local development
-local_backend: true
+# Local development (set to false for production)
+# local_backend: true
 
 # Media files configuration
 media_folder: "assets/images" # Where uploaded images will be stored
