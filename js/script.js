@@ -314,39 +314,6 @@ function debounce(func, wait) {
     };
 }
 
-// === STATS COUNTER ANIMATION ===
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16); // 60fps
-    
-    const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-            element.textContent = Math.ceil(target);
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.ceil(start);
-        }
-    }, 16);
-}
-
-// Observe stats for counter animation
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-            entry.target.classList.add('counted');
-            const target = parseInt(entry.target.getAttribute('data-target'));
-            if (target) {
-                animateCounter(entry.target, target);
-            }
-        }
-    });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.stat-number[data-target]').forEach(stat => {
-    statsObserver.observe(stat);
-});
-
 // === WHATSAPP FLOATING BUTTON BUBBLE ===
 let bubbleTimeout;
 let bubbleShown = false;
@@ -446,60 +413,9 @@ function loadTestimonialsFromStorage() {
     }
 }
 
-// === LOAD STATS FROM LOCALSTORAGE ===
-function loadStatsFromStorage() {
-    const stats = localStorage.getItem('dewi_salon_stats');
-    if (!stats) return; // Use hardcoded data if no localStorage data
-    
-    try {
-        const data = JSON.parse(stats);
-        
-        // Update customers count
-        const customersEl = document.querySelector('.stat-card:nth-child(1) .stat-number[data-target]');
-        if (customersEl) {
-            customersEl.setAttribute('data-target', data.totalCustomers);
-            customersEl.textContent = '0'; // Reset for animation
-        }
-        
-        // Update rating
-        const ratingEl = document.querySelector('.stat-card:nth-child(2) .stat-number');
-        if (ratingEl) {
-            ratingEl.innerHTML = `${data.avgRating}<span class="stat-suffix">/5</span>`;
-        }
-        const reviewsEl = document.querySelector('.stat-card:nth-child(2) .stat-label');
-        if (reviewsEl) {
-            reviewsEl.textContent = `Rating dari ${data.totalReviews} Reviews`;
-        }
-        
-        // Update IG followers
-        const igEl = document.querySelector('.stat-card:nth-child(3) .stat-number[data-target]');
-        if (igEl) {
-            igEl.setAttribute('data-target', data.igFollowers);
-            igEl.textContent = '0'; // Reset for animation
-        }
-        
-        // Update years experience
-        const yearsEl = document.querySelector('.stat-card:nth-child(4) .stat-number[data-target]');
-        if (yearsEl) {
-            yearsEl.setAttribute('data-target', data.yearsExp);
-            yearsEl.textContent = '0'; // Reset for animation
-        }
-        
-        // Trigger counter animations again
-        document.querySelectorAll('.stat-number[data-target]').forEach(stat => {
-            if (!stat.classList.contains('counted')) {
-                statsObserver.observe(stat);
-            }
-        });
-    } catch (error) {
-        console.error('Error loading stats:', error);
-    }
-}
-
 // === LOAD DATA ON PAGE LOAD ===
 document.addEventListener('DOMContentLoaded', () => {
     loadTestimonialsFromStorage();
-    loadStatsFromStorage();
 });
 
 // === CONSOLE LOG (REMOVE IN PRODUCTION) ===
