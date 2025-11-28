@@ -36,102 +36,115 @@
 
     /* Sidebar / Header Styling */
     [class*="AppHeader"] {
-      background: var(--bg-panel) !important;
+      background: #fbfbfb !important; /* Very subtle gray */
       border-right: 1px solid var(--border-subtle) !important;
       box-shadow: none !important;
+      width: 260px !important; /* Fixed width for thin sidebar */
     }
 
-    /* Make header text dark */
-    [class*="AppHeader"] a, 
-    [class*="AppHeader"] button,
-    [class*="AppHeader"] span {
-      color: var(--text-primary) !important;
+    /* Fix Sidebar layout to be strictly vertical */
+    [class*="AppHeader"] > div {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      padding: 16px !important;
+      height: 100vh !important;
     }
 
-    /* Active state in sidebar */
-    [class*="NavLink"].active {
-      background-color: rgba(217, 177, 138, 0.15) !important;
-      border-left: 3px solid var(--brand-color) !important;
-      color: var(--brand-dark) !important;
-    }
-
-    /* Main Content Area */
-    [class*="CollectionTop"] {
-        background: transparent !important;
-        border-bottom: 1px solid var(--border-subtle) !important;
-        padding: 24px 32px !important;
-    }
-
-    /* Button Styling - Linear Style */
-    /* Reset default button mess */
-    button, 
-    [class*="Button"], 
-    a[class*="Button"] {
-      font-family: 'Inter', sans-serif !important;
-      font-weight: 500 !important;
+    /* Sidebar Links */
+    [class*="NavLink"] {
+      width: 100% !important;
+      padding: 8px 12px !important;
+      margin-bottom: 4px !important;
       border-radius: 6px !important;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      box-shadow: var(--shadow-sm) !important;
-      text-transform: none !important;
+      display: flex !important;
+      align-items: center !important;
       font-size: 14px !important;
-      height: auto !important;
-      padding: 8px 16px !important;
-      line-height: 1.5 !important;
-      white-space: nowrap !important;
+      font-weight: 500 !important;
+      color: var(--text-secondary) !important;
+      border-left: none !important; /* Remove old active indicator */
     }
 
-    /* Primary Buttons (Save, Publish, Login) */
-    button[class*="confirm"], 
-    [class*="Button"][class*="Primary"],
-    button[class*="LoginButton"] {
-      background-color: #2d2d2d !important; /* Dark almost black like Linear */
-      color: #ffffff !important;
-      border: 1px solid transparent !important;
-    }
-
-    button[class*="confirm"]:hover, 
-    [class*="Button"][class*="Primary"]:hover {
-      background-color: #000000 !important;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
-    }
-
-    /* Secondary Buttons (Cancel, etc) */
-    [class*="Button"][class*="Gray"],
-    [class*="Button"][class*="Light"] {
-      background-color: #ffffff !important;
+    [class*="NavLink"]:hover {
+      background-color: rgba(0,0,0,0.04) !important;
       color: var(--text-primary) !important;
-      border: 1px solid #e5e7eb !important;
     }
 
-    [class*="Button"][class*="Gray"]:hover {
-      background-color: #f9fafb !important;
-      border-color: #d1d5db !important;
+    [class*="NavLink"].active {
+      background-color: #ebebef !important; /* Linear active state */
+      color: var(--text-primary) !important;
+      border-left: none !important;
     }
 
-    /* Fix text overflow in buttons */
-    span {
-        white-space: normal; /* Allow wrapping for normal text */
-    }
-    
-    button span {
-        white-space: nowrap !important; /* Prevent wrap in buttons */
+    /* Sidebar Icons */
+    [class*="IconWrapper"] {
+      margin-right: 10px !important;
+      color: inherit !important;
     }
 
-    /* Card/List Item Styling */
+    /* Top Bar (Breadcrumbs area) */
+    [class*="CollectionTop"] {
+        height: 64px !important;
+        padding: 0 32px !important;
+        display: flex !important;
+        align-items: center !important;
+        background-color: #ffffff !important; /* White header */
+        border-bottom: 1px solid var(--border-subtle) !important;
+        margin-bottom: 24px !important;
+    }
+
+    /* Card/List Item Styling (Gallery Focused) */
     [class*="Card"] {
         background: var(--bg-panel) !important;
         border: 1px solid var(--border-subtle) !important;
         border-radius: 8px !important;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important;
+        box-shadow: var(--shadow-sm) !important;
         transition: all 0.2s ease !important;
         margin-bottom: 12px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+    }
+
+    /* Gallery/Image Thumbnails within Cards */
+    [class*="Card"] img {
+        height: 160px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        border-bottom: 1px solid var(--border-subtle) !important;
+        background-color: #f4f5f8 !important;
+    }
+
+    /* Card Text Content */
+    [class*="Card"] [class*="CardContent"] {
+        padding: 12px 16px !important;
     }
 
     [class*="Card"]:hover {
         transform: translateY(-2px);
         box-shadow: var(--shadow-hover) !important;
         border-color: rgba(217, 177, 138, 0.5) !important;
+    }
+
+    /* Grid Layout for Cards (Masonry-ish) */
+    [class*="CollectionMain"] > div {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+        gap: 24px !important;
+        padding: 0 32px !important;
+    }
+    
+    /* Fix Search Bar */
+    [class*="SearchInput"] {
+        background: #f4f5f8 !important;
+        border: 1px solid transparent !important;
+        padding: 8px 12px !important;
+        border-radius: 6px !important;
+    }
+    
+    [class*="SearchInput"]:focus {
+        background: #ffffff !important;
+        border-color: var(--border-subtle) !important;
+        box-shadow: 0 0 0 2px rgba(0,0,0,0.05) !important;
     }
 
     /* Form Inputs */
