@@ -1,5 +1,5 @@
 ---
 image: /assets/images/gallery/picture1.jpg
-caption: test1
+caption: Nail Art 1
 order: 1
 ---
