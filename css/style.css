@@ -521,6 +521,9 @@ section {
     transition: all var(--transition-smooth);
     position: relative;
     border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .package-card:hover {
@@ -587,6 +590,7 @@ section {
 .package-card .btn {
     width: 100%;
     justify-content: center;
+    margin-top: auto;
 }
 
 /* === NAIL ART TIERS === */
@@ -606,6 +610,9 @@ section {
     border-radius: var(--radius-lg);
     transition: all var(--transition-smooth);
     border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .tier-card:hover {
@@ -682,6 +689,9 @@ section {
     box-shadow: var(--shadow-md);
     transition: all var(--transition-smooth);
     border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .extension-card:hover {
@@ -734,6 +744,7 @@ section {
 .extension-card .btn {
     width: 100%;
     justify-content: center;
+    margin-top: auto;
 }
 
 /* === GALLERY === */
