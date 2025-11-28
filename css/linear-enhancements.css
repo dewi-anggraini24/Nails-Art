@@ -1,0 +1,473 @@
+/* ===================================
+   LINEAR-STYLE ENHANCEMENTS
+   Modern, Clean, Refined Design
+   Keeping existing colors, improving UX
+   =================================== */
+
+/* ===================================
+   ENHANCED VARIABLES
+   =================================== */
+:root {
+    /* Enhanced Shadows (Linear-inspired) */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.12);
+    
+    /* Smooth Transitions */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Refined Borders */
+    --border-subtle: 1px solid rgba(0, 0, 0, 0.06);
+    --border-light: 1px solid rgba(0, 0, 0, 0.08);
+    --border-medium: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* ===================================
+   BASE IMPROVEMENTS
+   =================================== */
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    background: linear-gradient(to bottom, #fefdfb 0%, #faf6f2 100%);
+    font-size: 16px;
+    letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+    font-weight: 600;
+}
+
+/* ===================================
+   HERO SECTION ENHANCEMENTS
+   =================================== */
+.hero {
+    background: linear-gradient(135deg, 
+        rgba(247, 232, 239, 0.3) 0%, 
+        rgba(243, 233, 255, 0.3) 100%);
+    border-bottom: var(--border-subtle);
+    padding: 120px 24px 100px;
+    min-height: 90vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Refined Floating Blobs */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(217, 177, 138, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: floatSlow 25s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(247, 232, 239, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: floatSlow 30s ease-in-out infinite reverse;
+}
+
+@keyframes floatSlow {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(30px, 30px) scale(1.05);
+    }
+}
+
+.hero-title {
+    font-size: clamp(48px, 8vw, 84px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+.hero p {
+    font-size: clamp(17px, 2vw, 20px);
+    line-height: 1.7;
+    color: var(--text-gray);
+    font-weight: 400;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===================================
+   BUTTON ENHANCEMENTS (Linear-style)
+   =================================== */
+.cta-primary,
+.btn-primary,
+.book-btn {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px !important;
+    background: linear-gradient(135deg, var(--gold-brown) 0%, var(--gold-brown-dark) 100%) !important;
+    border-radius: 10px !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    box-shadow: var(--shadow-sm) !important;
+    transition: all var(--transition-smooth) !important;
+    border: none !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-primary::before,
+.btn-primary::before,
+.book-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.cta-primary:hover::before,
+.btn-primary:hover::before,
+.book-btn:hover::before {
+    opacity: 1;
+}
+
+.cta-primary:hover,
+.btn-primary:hover,
+.book-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+.cta-primary:active,
+.btn-primary:active,
+.book-btn:active {
+    transform: translateY(0) !important;
+}
+
+.cta-secondary {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 10px !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    box-shadow: var(--shadow-xs) !important;
+    border: 1px solid rgba(217, 177, 138, 0.15) !important;
+    transition: all var(--transition-smooth) !important;
+    color: var(--gold-brown) !important;
+}
+
+.cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(217, 177, 138, 0.3) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* ===================================
+   CARD ENHANCEMENTS (Glass + Linear)
+   =================================== */
+.package-card,
+.tier-card,
+.extension-card,
+.gallery-item,
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(217, 177, 138, 0.1) !important;
+    border-radius: 14px !important;
+    box-shadow: var(--shadow-sm) !important;
+    transition: all var(--transition-smooth) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.package-card::before,
+.tier-card::before,
+.extension-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold-brown) 0%, var(--gold-brown-dark) 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-smooth);
+}
+
+.package-card:hover::before,
+.tier-card:hover::before,
+.extension-card:hover::before {
+    transform: scaleX(1);
+}
+
+.package-card:hover,
+.tier-card:hover,
+.extension-card:hover,
+.gallery-item:hover,
+.testimonial-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: var(--shadow-lg) !important;
+    border-color: rgba(217, 177, 138, 0.2) !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* ===================================
+   SECTION IMPROVEMENTS
+   =================================== */
+.section {
+    padding: var(--spacing-xxl) var(--spacing-md);
+    border-bottom: var(--border-subtle);
+}
+
+.section-title {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, var(--gold-brown-dark) 0%, var(--gold-brown) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    font-size: clamp(16px, 2vw, 18px);
+    color: var(--text-gray);
+    font-weight: 400;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto 48px;
+}
+
+/* ===================================
+   TESTIMONIALS ENHANCEMENTS
+   =================================== */
+.testimonial-card {
+    padding: 32px !important;
+}
+
+.testimonial-stars {
+    color: var(--gold-brown) !important;
+    font-size: 18px !important;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.testimonial-text {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    color: var(--text-gray) !important;
+    margin-bottom: 20px !important;
+}
+
+.testimonial-author {
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    color: var(--text-dark) !important;
+}
+
+/* ===================================
+   STATS SECTION (Linear-style)
+   =================================== */
+.stats-section {
+    background: linear-gradient(135deg, 
+        rgba(247, 232, 239, 0.25) 0%, 
+        rgba(243, 233, 255, 0.25) 100%) !important;
+    border-top: var(--border-subtle);
+    border-bottom: var(--border-subtle);
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(10px) !important;
+    border: var(--border-subtle) !important;
+    border-radius: 12px !important;
+    padding: 32px 24px !important;
+    text-align: center;
+    transition: all var(--transition-smooth) !important;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: var(--shadow-md) !important;
+    background: rgba(255, 255, 255, 0.75) !important;
+}
+
+.stat-number {
+    font-size: clamp(40px, 6vw, 56px) !important;
+    font-weight: 700 !important;
+    color: var(--gold-brown) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+}
+
+.stat-label {
+    font-size: 15px !important;
+    color: var(--text-gray) !important;
+    font-weight: 500 !important;
+    margin-top: 8px !important;
+}
+
+/* ===================================
+   FOOTER ENHANCEMENTS
+   =================================== */
+.footer {
+    background: var(--text-dark) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-map {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+/* ===================================
+   WHATSAPP BUTTON (Linear Floating)
+   =================================== */
+.whatsapp-float {
+    box-shadow: var(--shadow-lg) !important;
+    transition: all var(--transition-smooth) !important;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-4px) scale(1.05) !important;
+    box-shadow: var(--shadow-xl) !important;
+}
+
+.whatsapp-bubble {
+    background: var(--white) !important;
+    border: var(--border-light) !important;
+    border-radius: 12px !important;
+    box-shadow: var(--shadow-lg) !important;
+    padding: 16px 20px !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* ===================================
+   ANIMATIONS (Smoother)
+   =================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* ===================================
+   SCROLL ANIMATIONS
+   =================================== */
+.fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===================================
+   RESPONSIVE REFINEMENTS
+   =================================== */
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 20px 80px;
+    }
+    
+    .section {
+        padding: 64px 20px;
+    }
+    
+    .package-card,
+    .testimonial-card {
+        padding: 24px !important;
+    }
+}
+
+/* ===================================
+   MICRO-INTERACTIONS
+   =================================== */
+button, a, .card {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Focus States (Accessibility) */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--gold-brown);
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+/* Selection Color */
+::selection {
+    background: rgba(217, 177, 138, 0.2);
+    color: var(--text-dark);
+}
+
+::-moz-selection {
+    background: rgba(217, 177, 138, 0.2);
+    color: var(--text-dark);
+}
+
+/* ===================================
+   PERFORMANCE OPTIMIZATIONS
+   =================================== */
+.hero::before,
+.hero::after {
+    will-change: transform;
+}
+
+.package-card,
+.testimonial-card,
+.cta-primary {
+    will-change: transform;
+}
