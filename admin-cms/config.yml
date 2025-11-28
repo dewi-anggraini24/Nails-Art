@@ -25,102 +25,102 @@ public_folder: "/assets/images" # Path for accessing images in the frontend
 collections:
   # Packages (Gel Polish)
   - name: "packages"
-    label: "Gel Polish Packages"
-    label_singular: "Package"
+    label: "Paket Gel Polish"
+    label_singular: "Paket"
     folder: "_data/packages"
     create: true
     slug: "{{slug}}"
     editor:
       preview: false
     fields:
-      - { label: "Icon (Emoji)", name: "icon", widget: "string", required: true, hint: "e.g., 💅" }
-      - { label: "Package Name", name: "name", widget: "string", required: true }
-      - { label: "Description", name: "description", widget: "text", required: true }
-      - { label: "Price", name: "price", widget: "string", required: true, hint: "e.g., IDR 65.000" }
-      - { label: "Features", name: "features", widget: "list", required: true, hint: "List of features" }
-      - { label: "Featured Package", name: "featured", widget: "boolean", default: false, required: false }
-      - { label: "Order", name: "order", widget: "number", default: 0, required: false, hint: "Display order (lower numbers first)" }
+      - { label: "Ikon (Emoji)", name: "icon", widget: "string", required: true, hint: "Contoh: 💅" }
+      - { label: "Nama Paket", name: "name", widget: "string", required: true }
+      - { label: "Deskripsi", name: "description", widget: "text", required: true }
+      - { label: "Harga", name: "price", widget: "string", required: true, hint: "Contoh: IDR 65.000" }
+      - { label: "Fitur", name: "features", widget: "list", required: true, hint: "Daftar fitur yang didapat" }
+      - { label: "Tampilkan Paling Depan (Featured)", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Urutan Tampilan", name: "order", widget: "number", default: 0, required: false, hint: "Angka kecil akan tampil duluan" }
 
   # Nail Art Tiers
   - name: "tiers"
-    label: "Nail Art Tiers"
-    label_singular: "Tier"
+    label: "Level Nail Art (Tiers)"
+    label_singular: "Level Nail Art"
     folder: "_data/tiers"
     create: true
     slug: "{{slug}}"
     editor:
       preview: false
     fields:
-      - { label: "Emoji", name: "emoji", widget: "string", required: true, hint: "e.g., 🌸" }
-      - { label: "Tier Name", name: "name", widget: "string", required: true }
-      - { label: "Description", name: "description", widget: "text", required: true }
-      - { label: "Examples", name: "examples", widget: "list", required: true, hint: "List of nail art examples" }
-      - { label: "Price Range", name: "priceRange", widget: "string", required: true, hint: "e.g., IDR 20.000 - 50.000" }
-      - { label: "Note", name: "note", widget: "string", required: false }
-      - { label: "Featured", name: "featured", widget: "boolean", default: false, required: false }
-      - { label: "Order", name: "order", widget: "number", default: 0, required: false }
+      - { label: "Emoji", name: "emoji", widget: "string", required: true, hint: "Contoh: 🌸" }
+      - { label: "Nama Level", name: "name", widget: "string", required: true }
+      - { label: "Deskripsi", name: "description", widget: "text", required: true }
+      - { label: "Contoh Desain", name: "examples", widget: "list", required: true, hint: "Daftar contoh desain nail art" }
+      - { label: "Rentang Harga", name: "priceRange", widget: "string", required: true, hint: "Contoh: IDR 20.000 - 50.000" }
+      - { label: "Catatan Tambahan", name: "note", widget: "string", required: false }
+      - { label: "Tampilkan Paling Depan (Featured)", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Urutan Tampilan", name: "order", widget: "number", default: 0, required: false }
 
   # Extensions
   - name: "extensions"
-    label: "Extensions & Add-ons"
-    label_singular: "Extension"
+    label: "Extensions & Tambahan"
+    label_singular: "Layanan Extension"
     folder: "_data/extensions"
     create: true
     slug: "{{slug}}"
     editor:
       preview: false
     fields:
-      - { label: "Icon (Emoji)", name: "icon", widget: "string", required: true }
-      - { label: "Service Name", name: "name", widget: "string", required: true }
-      - { label: "Description", name: "description", widget: "text", required: true }
-      - { label: "Price Range", name: "priceRange", widget: "string", required: true }
-      - { label: "Features", name: "features", widget: "list", required: true }
-      - { label: "Featured", name: "featured", widget: "boolean", default: false, required: false }
-      - { label: "Order", name: "order", widget: "number", default: 0, required: false }
+      - { label: "Ikon (Emoji)", name: "icon", widget: "string", required: true }
+      - { label: "Nama Layanan", name: "name", widget: "string", required: true }
+      - { label: "Deskripsi", name: "description", widget: "text", required: true }
+      - { label: "Rentang Harga", name: "priceRange", widget: "string", required: true }
+      - { label: "Fitur", name: "features", widget: "list", required: true }
+      - { label: "Tampilkan Paling Depan (Featured)", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Urutan Tampilan", name: "order", widget: "number", default: 0, required: false }
 
   # Gallery
   - name: "gallery"
-    label: "Gallery"
-    label_singular: "Gallery Item"
+    label: "Galeri Foto"
+    label_singular: "Foto Galeri"
     folder: "_data/gallery"
     create: true
     slug: "{{slug}}"
     editor:
       preview: false
     fields:
-      - { label: "Image", name: "image", widget: "image", required: true, media_folder: "/assets/images/gallery" }
-      - { label: "Caption", name: "caption", widget: "string", required: true }
-      - { label: "Order", name: "order", widget: "number", default: 0, required: false }
+      - { label: "Upload Foto", name: "image", widget: "image", required: true, media_folder: "/assets/images/gallery" }
+      - { label: "Keterangan Foto (Caption)", name: "caption", widget: "string", required: true }
+      - { label: "Urutan Tampilan", name: "order", widget: "number", default: 0, required: false }
 
   # Settings
   - name: "settings"
-    label: "Settings"
+    label: "Pengaturan Website"
     files:
-      - label: "Contact Information"
+      - label: "Kontak & Lokasi"
         name: "contact"
         file: "_data/settings/contact.json"
         fields:
-          - { label: "WhatsApp Number", name: "whatsapp", widget: "string", required: true, hint: "+62 812-3456-7890" }
-          - { label: "Instagram Handle", name: "instagram", widget: "string", required: true, hint: "@dewisalon" }
-          - { label: "Address", name: "address", widget: "text", required: true }
-          - { label: "City", name: "city", widget: "string", required: true }
-          - { label: "Postal Code", name: "postalCode", widget: "string", required: false }
-          - { label: "Google Maps Embed URL", name: "mapsUrl", widget: "text", required: false, hint: "Full iframe src URL from Google Maps" }
+          - { label: "Nomor WhatsApp", name: "whatsapp", widget: "string", required: true, hint: "+62 812-3456-7890" }
+          - { label: "Username Instagram", name: "instagram", widget: "string", required: true, hint: "@dewisalon" }
+          - { label: "Alamat Lengkap", name: "address", widget: "text", required: true }
+          - { label: "Kota", name: "city", widget: "string", required: true }
+          - { label: "Kode Pos", name: "postalCode", widget: "string", required: false }
+          - { label: "Link Google Maps Embed", name: "mapsUrl", widget: "text", required: false, hint: "Copy URL dari iframe Google Maps" }
       
-      - label: "Business Hours"
+      - label: "Jam Operasional"
         name: "hours"
         file: "_data/settings/hours.json"
         fields:
-          - { label: "Weekday Hours", name: "weekdays", widget: "string", required: true, hint: "e.g., Senin - Jumat: Tutup" }
-          - { label: "Weekend Hours", name: "weekend", widget: "string", required: true, hint: "e.g., Sabtu & Minggu: 09.00 - 19.00 WIB" }
-          - { label: "Special Notice", name: "notice", widget: "string", required: false, hint: "Any special announcement" }
+          - { label: "Jam Hari Biasa", name: "weekdays", widget: "string", required: true, hint: "Contoh: Senin - Jumat: Tutup" }
+          - { label: "Jam Akhir Pekan", name: "weekend", widget: "string", required: true, hint: "Contoh: Sabtu & Minggu: 09.00 - 19.00 WIB" }
+          - { label: "Pesan Khusus", name: "notice", widget: "string", required: false, hint: "Pengumuman libur atau promo" }
       
-      - label: "SEO Settings"
+      - label: "Pengaturan SEO (Pencarian Google)"
         name: "seo"
         file: "_data/settings/seo.json"
         fields:
-          - { label: "Site Title", name: "title", widget: "string", required: true }
-          - { label: "Site Description", name: "description", widget: "text", required: true }
-          - { label: "Keywords", name: "keywords", widget: "string", required: true, hint: "Comma separated" }
-          - { label: "Site URL", name: "siteUrl", widget: "string", required: true, hint: "https://yoursite.com" }
-          - { label: "OG Image", name: "ogImage", widget: "image", required: false, media_folder: "/assets/images" }
+          - { label: "Judul Website", name: "title", widget: "string", required: true }
+          - { label: "Deskripsi Website", name: "description", widget: "text", required: true }
+          - { label: "Kata Kunci (Keywords)", name: "keywords", widget: "string", required: true, hint: "Pisahkan dengan koma" }
+          - { label: "Link Website (URL)", name: "siteUrl", widget: "string", required: true, hint: "https://namawebsite.com" }
+          - { label: "Gambar Preview Link", name: "ogImage", widget: "image", required: false, media_folder: "/assets/images" }

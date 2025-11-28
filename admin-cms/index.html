@@ -30,6 +30,30 @@
     [class*="AppHeader"] {
       background: linear-gradient(135deg, #d9b18a 0%, #d19b6c 100%) !important;
     }
+    
+    /* Friendly UI enhancements */
+    [class*="CollectionTop"] {
+        padding: 20px !important;
+        background-color: #faf6f2 !important;
+    }
+    
+    h1, h2, h3 {
+        font-family: 'Poppins', sans-serif !important;
+        color: #2d2d2d !important;
+    }
+    
+    /* Card styling in admin */
+    [class*="Card"] {
+        border-radius: 12px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+        border: 1px solid rgba(217, 177, 138, 0.2) !important;
+        transition: transform 0.2s ease;
+    }
+    
+    [class*="Card"]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    }
   </style>
 </head>
 <body>
