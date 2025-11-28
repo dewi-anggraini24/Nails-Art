@@ -1,0 +1,52 @@
+{
+  "packages": [
+    {
+      "icon": "💅",
+      "name": "Manicure Only",
+      "description": "Perawatan kuku dasar tanpa cat",
+      "price": "IDR 35.000",
+      "features": [
+        "Dry manicure profesional",
+        "Rapikan bentuk kuku",
+        "Perawatan kutikula",
+        "Buffing & polish natural"
+      ],
+      "whatsappText": "Halo, saya mau booking Manicure Only",
+      "buttonText": "Pilih Paket",
+      "isPrimary": false
+    },
+    {
+      "icon": "💖",
+      "name": "Regular Gel Polish",
+      "description": "Warna solid dengan hasil glossy sempurna",
+      "price": "IDR 65.000",
+      "features": [
+        "Manicure lengkap",
+        "Gel polish 1 warna",
+        "Glossy finish premium",
+        "Tahan 2-3 minggu",
+        "Pilihan 100+ warna"
+      ],
+      "whatsappText": "Halo, saya mau booking Regular Gel Polish",
+      "buttonText": "Pilih Paket",
+      "isPrimary": true,
+      "badge": "Popular ⭐"
+    },
+    {
+      "icon": "✨",
+      "name": "Premium Gel Polish",
+      "description": "Kualitas terbaik dengan hasil maksimal",
+      "price": "IDR 85.000",
+      "features": [
+        "Manicure premium",
+        "Gel polish premium brand",
+        "Ultra glossy & pigmented",
+        "Tahan hingga 4 minggu",
+        "Extra shine & smooth"
+      ],
+      "whatsappText": "Halo, saya mau booking Premium Gel Polish",
+      "buttonText": "Pilih Paket",
+      "isPrimary": false
+    }
+  ]
+}

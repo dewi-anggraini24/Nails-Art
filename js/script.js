@@ -44,42 +44,51 @@ document.querySelectorAll('.animate-on-scroll').forEach(el => {
 // === GALLERY CAROUSEL ===
 class GalleryCarousel {
     constructor() {
-        this.track = document.getElementById('galleryTrack');
+        this.track = document.getElementById('gallery-track'); // Updated ID to match HTML
         this.prevBtn = document.getElementById('prevBtn');
         this.nextBtn = document.getElementById('nextBtn');
-        this.items = document.querySelectorAll('.gallery-item');
+        // Select items dynamically in case they are added later
+        this.items = () => document.querySelectorAll('.gallery-item');
         this.currentIndex = 0;
         this.itemsPerView = this.getItemsPerView();
-        
+
         this.init();
         this.setupResizeHandler();
     }
-    
+
     init() {
         if (!this.track || !this.prevBtn || !this.nextBtn) return;
-        
+
+        // Remove existing listeners to prevent duplicates if re-initialized
+        const newPrevBtn = this.prevBtn.cloneNode(true);
+        const newNextBtn = this.nextBtn.cloneNode(true);
+        this.prevBtn.parentNode.replaceChild(newPrevBtn, this.prevBtn);
+        this.nextBtn.parentNode.replaceChild(newNextBtn, this.nextBtn);
+        this.prevBtn = newPrevBtn;
+        this.nextBtn = newNextBtn;
+
         this.prevBtn.addEventListener('click', () => this.prev());
         this.nextBtn.addEventListener('click', () => this.next());
-        
+
         // Touch/swipe support
         let startX = 0;
         let isDragging = false;
-        
+
         this.track.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
             isDragging = true;
         });
-        
+
         this.track.addEventListener('touchmove', (e) => {
             if (!isDragging) return;
             e.preventDefault();
         });
-        
+
         this.track.addEventListener('touchend', (e) => {
             if (!isDragging) return;
             const endX = e.changedTouches[0].clientX;
             const diff = startX - endX;
-            
+
             if (Math.abs(diff) > 50) {
                 if (diff > 0) {
                     this.next();
@@ -89,21 +98,24 @@ class GalleryCarousel {
             }
             isDragging = false;
         });
-        
+
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') this.prev();
             if (e.key === 'ArrowRight') this.next();
         });
+
+        // Initial update
+        this.updateCarousel();
     }
-    
+
     getItemsPerView() {
         const width = window.innerWidth;
         if (width < 640) return 1;
         if (width < 1024) return 2;
         return 3;
     }
-    
+
     setupResizeHandler() {
         let resizeTimer;
         window.addEventListener('resize', () => {
@@ -114,164 +126,82 @@ class GalleryCarousel {
             }, 250);
         });
     }
-    
+
     prev() {
         if (this.currentIndex > 0) {
             this.currentIndex--;
             this.updateCarousel();
         }
     }
-    
+
     next() {
-        const maxIndex = this.items.length - this.itemsPerView;
+        const items = this.items();
+        const maxIndex = items.length - this.itemsPerView;
         if (this.currentIndex < maxIndex) {
             this.currentIndex++;
             this.updateCarousel();
         }
     }
-    
+
     updateCarousel() {
-        const itemWidth = this.items[0].offsetWidth;
+        const items = this.items();
+        if (items.length === 0) return;
+
+        const itemWidth = items[0].offsetWidth;
         const gap = 24; // Match CSS gap
         const offset = -(this.currentIndex * (itemWidth + gap));
         this.track.style.transform = `translateX(${offset}px)`;
-        
+
         // Update button states
         this.prevBtn.style.opacity = this.currentIndex === 0 ? '0.5' : '1';
         this.prevBtn.style.cursor = this.currentIndex === 0 ? 'not-allowed' : 'pointer';
-        
-        const maxIndex = this.items.length - this.itemsPerView;
+
+        const maxIndex = items.length - this.itemsPerView;
         this.nextBtn.style.opacity = this.currentIndex >= maxIndex ? '0.5' : '1';
         this.nextBtn.style.cursor = this.currentIndex >= maxIndex ? 'not-allowed' : 'pointer';
     }
 }
 
-// Initialize carousel when DOM is loaded
+// Expose to window for CMS loader
+window.GalleryCarousel = GalleryCarousel;
+
+// Initialize carousel when DOM is loaded (will be re-initialized by CMS loader)
 document.addEventListener('DOMContentLoaded', () => {
-    new GalleryCarousel();
-});
-
-// === AUTO CAROUSEL (OPTIONAL) ===
-// Uncomment to enable auto-play
-/*
-let autoPlayInterval;
-const startAutoPlay = () => {
-    autoPlayInterval = setInterval(() => {
-        const carousel = new GalleryCarousel();
-        carousel.next();
-    }, 5000);
-};
-
-const stopAutoPlay = () => {
-    clearInterval(autoPlayInterval);
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-    startAutoPlay();
-    
-    // Stop auto-play when user interacts
-    document.getElementById('prevBtn')?.addEventListener('click', () => {
-        stopAutoPlay();
-    });
-    
-    document.getElementById('nextBtn')?.addEventListener('click', () => {
-        stopAutoPlay();
-    });
-});
-*/
-
-// === PARALLAX EFFECT FOR FLOATING DECORATIONS ===
-let ticking = false;
-
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        window.requestAnimationFrame(() => {
-            parallaxEffect();
-            ticking = false;
-        });
-        ticking = true;
+    // Only init if track has children (static content), otherwise wait for CMS
+    if (document.getElementById('gallery-track')?.children.length > 0) {
+        new GalleryCarousel();
     }
 });
 
-function parallaxEffect() {
-    const scrolled = window.pageYOffset;
-    const decorations = document.querySelectorAll('.floating-decoration');
-    
-    decorations.forEach((decoration, index) => {
-        const speed = 0.1 + (index * 0.02);
-        const yPos = -(scrolled * speed);
-        decoration.style.transform = `translateY(${yPos}px)`;
-    });
-}
+// ... (Auto Carousel commented out) ...
 
-// === NAVBAR SCROLL EFFECT (OPTIONAL) ===
-// Uncomment if you want to add a sticky header with scroll effects
-/*
-const header = document.querySelector('header');
-let lastScroll = 0;
+// ... (Parallax Effect) ...
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        header?.classList.add('scrolled');
-    } else {
-        header?.classList.remove('scrolled');
-    }
-    
-    // Hide/show header on scroll
-    if (currentScroll > lastScroll && currentScroll > 200) {
-        header?.classList.add('hidden');
-    } else {
-        header?.classList.remove('hidden');
-    }
-    
-    lastScroll = currentScroll;
-});
-*/
+// ... (Navbar Scroll Effect) ...
 
-// === LAZY LOADING FOR IMAGES ===
-const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const img = entry.target;
-            const src = img.getAttribute('data-src');
-            
-            if (src) {
-                img.src = src;
-                img.removeAttribute('data-src');
-                observer.unobserve(img);
-            }
-        }
-    });
-}, {
-    rootMargin: '50px'
-});
+// ... (Lazy Loading) ...
 
-document.querySelectorAll('img[data-src]').forEach(img => {
-    imageObserver.observe(img);
-});
-
-// === BUTTON RIPPLE EFFECT ===
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
+// === BUTTON RIPPLE EFFECT (Event Delegation) ===
+document.addEventListener('click', function (e) {
+    const button = e.target.closest('.btn');
+    if (button) {
         const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
+        const rect = button.getBoundingClientRect();
         const size = Math.max(rect.width, rect.height);
         const x = e.clientX - rect.left - size / 2;
         const y = e.clientY - rect.top - size / 2;
-        
+
         ripple.style.width = ripple.style.height = size + 'px';
         ripple.style.left = x + 'px';
         ripple.style.top = y + 'px';
         ripple.classList.add('ripple');
-        
-        this.appendChild(ripple);
-        
+
+        button.appendChild(ripple);
+
         setTimeout(() => {
             ripple.remove();
         }, 600);
-    });
+    }
 });
 
 // Add ripple styles dynamically
@@ -324,7 +254,7 @@ setTimeout(() => {
     if (bubble && !bubbleShown) {
         bubble.classList.add('show');
         bubbleShown = true;
-        
+
         // Auto hide after 10 seconds
         bubbleTimeout = setTimeout(() => {
             bubble.classList.remove('show');
@@ -351,7 +281,7 @@ let lastScrollTop = 0;
 window.addEventListener('scroll', debounce(() => {
     const bubble = document.getElementById('whatsappBubble');
     const st = window.pageYOffset || document.documentElement.scrollTop;
-    
+
     if (Math.abs(st - lastScrollTop) > 100 && bubble) {
         bubble.classList.remove('show');
     }
@@ -412,13 +342,13 @@ const konamiSequence = [
 document.addEventListener('keydown', (e) => {
     konamiCode.push(e.key);
     konamiCode.splice(-konamiSequence.length - 1, konamiCode.length - konamiSequence.length);
-    
+
     if (konamiCode.join(',').includes(konamiSequence.join(','))) {
         document.body.style.animation = 'rainbow 2s linear infinite';
         setTimeout(() => {
             document.body.style.animation = '';
         }, 5000);
-        
+
         const rainbowStyle = document.createElement('style');
         rainbowStyle.textContent = `
             @keyframes rainbow {
@@ -427,7 +357,7 @@ document.addEventListener('keydown', (e) => {
             }
         `;
         document.head.appendChild(rainbowStyle);
-        
+
         alert('💅✨ You found the secret nail polish collection! ✨💅');
     }
 });

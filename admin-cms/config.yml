@@ -26,71 +26,80 @@ collections:
   # Packages (Gel Polish)
   - name: "packages"
     label: "Paket Gel Polish"
-    label_singular: "Paket"
-    folder: "_data/packages"
-    create: true
-    slug: "{{slug}}"
-    editor:
-      preview: false
-    fields:
-      - { label: "Ikon (Emoji)", name: "icon", widget: "string", required: true, hint: "Contoh: 💅" }
-      - { label: "Nama Paket", name: "name", widget: "string", required: true }
-      - { label: "Deskripsi", name: "description", widget: "text", required: true }
-      - { label: "Harga", name: "price", widget: "string", required: true, hint: "Contoh: IDR 65.000" }
-      - { label: "Fitur", name: "features", widget: "list", required: true, hint: "Daftar fitur yang didapat" }
-      - { label: "Tampilkan Paling Depan (Featured)", name: "featured", widget: "boolean", default: false, required: false }
-      - { label: "Urutan Tampilan", name: "order", widget: "number", default: 0, required: false, hint: "Angka kecil akan tampil duluan" }
+    files:
+      - label: "Daftar Paket"
+        name: "packages_list"
+        file: "data/packages.json"
+        fields:
+          - label: "Daftar Paket"
+            name: "packages"
+            widget: "list"
+            fields:
+              - { label: "Ikon (Emoji)", name: "icon", widget: "string", required: true, hint: "Contoh: 💅" }
+              - { label: "Nama Paket", name: "name", widget: "string", required: true }
+              - { label: "Deskripsi", name: "description", widget: "text", required: true }
+              - { label: "Harga", name: "price", widget: "string", required: true, hint: "Contoh: IDR 65.000" }
+              - { label: "Fitur", name: "features", widget: "list", required: true, hint: "Daftar fitur yang didapat" }
+              - { label: "Teks WhatsApp", name: "whatsappText", widget: "string", required: true }
+              - { label: "Teks Tombol", name: "buttonText", widget: "string", default: "Pilih Paket" }
+              - { label: "Highlight (Popular)", name: "isPrimary", widget: "boolean", default: false }
+              - { label: "Badge Text", name: "badge", widget: "string", required: false, hint: "Contoh: Popular ⭐" }
 
   # Nail Art Tiers
   - name: "tiers"
     label: "Level Nail Art (Tiers)"
-    label_singular: "Level Nail Art"
-    folder: "_data/tiers"
-    create: true
-    slug: "{{slug}}"
-    editor:
-      preview: false
-    fields:
-      - { label: "Emoji", name: "emoji", widget: "string", required: true, hint: "Contoh: 🌸" }
-      - { label: "Nama Level", name: "name", widget: "string", required: true }
-      - { label: "Deskripsi", name: "description", widget: "text", required: true }
-      - { label: "Contoh Desain", name: "examples", widget: "list", required: true, hint: "Daftar contoh desain nail art" }
-      - { label: "Rentang Harga", name: "priceRange", widget: "string", required: true, hint: "Contoh: IDR 20.000 - 50.000" }
-      - { label: "Catatan Tambahan", name: "note", widget: "string", required: false }
-      - { label: "Tampilkan Paling Depan (Featured)", name: "featured", widget: "boolean", default: false, required: false }
-      - { label: "Urutan Tampilan", name: "order", widget: "number", default: 0, required: false }
+    files:
+      - label: "Daftar Level"
+        name: "tiers_list"
+        file: "data/tiers.json"
+        fields:
+          - label: "Daftar Level"
+            name: "tiers"
+            widget: "list"
+            fields:
+              - { label: "Emoji", name: "emoji", widget: "string", required: true, hint: "Contoh: 🌸" }
+              - { label: "Nama Level", name: "name", widget: "string", required: true }
+              - { label: "Deskripsi", name: "description", widget: "text", required: true }
+              - { label: "Contoh Desain", name: "examples", widget: "list", required: true, hint: "Daftar contoh desain nail art" }
+              - { label: "Rentang Harga", name: "price", widget: "string", required: true, hint: "Contoh: + IDR 20.000 - 50.000" }
+              - { label: "Catatan Tambahan", name: "note", widget: "string", required: false }
+              - { label: "Highlight (Featured)", name: "featured", widget: "boolean", default: false }
 
   # Extensions
   - name: "extensions"
     label: "Extensions & Tambahan"
-    label_singular: "Layanan Extension"
-    folder: "_data/extensions"
-    create: true
-    slug: "{{slug}}"
-    editor:
-      preview: false
-    fields:
-      - { label: "Ikon (Emoji)", name: "icon", widget: "string", required: true }
-      - { label: "Nama Layanan", name: "name", widget: "string", required: true }
-      - { label: "Deskripsi", name: "description", widget: "text", required: true }
-      - { label: "Rentang Harga", name: "priceRange", widget: "string", required: true }
-      - { label: "Fitur", name: "features", widget: "list", required: true }
-      - { label: "Tampilkan Paling Depan (Featured)", name: "featured", widget: "boolean", default: false, required: false }
-      - { label: "Urutan Tampilan", name: "order", widget: "number", default: 0, required: false }
+    files:
+      - label: "Daftar Layanan"
+        name: "extensions_list"
+        file: "data/extensions.json"
+        fields:
+          - label: "Daftar Layanan"
+            name: "extensions"
+            widget: "list"
+            fields:
+              - { label: "Ikon (Emoji)", name: "icon", widget: "string", required: true }
+              - { label: "Nama Layanan", name: "name", widget: "string", required: true }
+              - { label: "Deskripsi", name: "description", widget: "text", required: true }
+              - { label: "Rentang Harga", name: "price", widget: "string", required: true }
+              - { label: "Fitur", name: "features", widget: "list", required: true }
+              - { label: "Teks WhatsApp", name: "whatsappText", widget: "string", required: true }
+              - { label: "Teks Tombol", name: "buttonText", widget: "string", default: "Book Now" }
+              - { label: "Highlight (Featured)", name: "isPrimary", widget: "boolean", default: false }
 
   # Gallery
   - name: "gallery"
     label: "Galeri Foto"
-    label_singular: "Foto Galeri"
-    folder: "_data/gallery"
-    create: true
-    slug: "{{slug}}"
-    editor:
-      preview: false
-    fields:
-      - { label: "Upload Foto", name: "image", widget: "image", required: true, media_folder: "/assets/images/gallery" }
-      - { label: "Keterangan Foto (Caption)", name: "caption", widget: "string", required: true }
-      - { label: "Urutan Tampilan", name: "order", widget: "number", default: 0, required: false }
+    files:
+      - label: "Daftar Foto"
+        name: "gallery_list"
+        file: "data/gallery.json"
+        fields:
+          - label: "Daftar Foto"
+            name: "gallery"
+            widget: "list"
+            fields:
+              - { label: "Upload Foto", name: "image", widget: "image", required: true, media_folder: "/assets/images/gallery" }
+              - { label: "Keterangan Foto (Caption)", name: "caption", widget: "string", required: true }
 
   # Settings
   - name: "settings"
@@ -98,7 +107,7 @@ collections:
     files:
       - label: "Kontak & Lokasi"
         name: "contact"
-        file: "_data/settings/contact.json"
+        file: "data/settings/contact.json"
         fields:
           - { label: "Nomor WhatsApp", name: "whatsapp", widget: "string", required: true, hint: "+62 812-3456-7890" }
           - { label: "Username Instagram", name: "instagram", widget: "string", required: true, hint: "@dewisalon" }
@@ -109,7 +118,7 @@ collections:
       
       - label: "Jam Operasional"
         name: "hours"
-        file: "_data/settings/hours.json"
+        file: "data/settings/hours.json"
         fields:
           - { label: "Jam Hari Biasa", name: "weekdays", widget: "string", required: true, hint: "Contoh: Senin - Jumat: Tutup" }
           - { label: "Jam Akhir Pekan", name: "weekend", widget: "string", required: true, hint: "Contoh: Sabtu & Minggu: 09.00 - 19.00 WIB" }
@@ -117,7 +126,7 @@ collections:
       
       - label: "Pengaturan SEO (Pencarian Google)"
         name: "seo"
-        file: "_data/settings/seo.json"
+        file: "data/settings/seo.json"
         fields:
           - { label: "Judul Website", name: "title", widget: "string", required: true }
           - { label: "Deskripsi Website", name: "description", widget: "text", required: true }

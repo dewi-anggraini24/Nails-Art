@@ -1,0 +1,49 @@
+{
+    "extensions": [
+        {
+            "icon": "💅",
+            "name": "Soft Gel Tips Extension",
+            "description": "Extension praktis dengan tips gel yang fleksibel dan natural. Cocok untuk pemula yang ingin kuku lebih panjang.",
+            "features": [
+                "Natural finish",
+                "Fleksibel & ringan",
+                "Aplikasi cepat",
+                "Aman untuk kuku"
+            ],
+            "price": "IDR 150.000 - 200.000",
+            "whatsappText": "Halo, saya mau tanya Soft Gel Tips Extension",
+            "buttonText": "Konsultasi",
+            "isPrimary": false
+        },
+        {
+            "icon": "✨",
+            "name": "Soft Gel Extension (Builder Gel)",
+            "description": "Extension premium menggunakan builder gel untuk hasil yang lebih kuat, natural, dan tahan lama hingga 3-4 minggu.",
+            "features": [
+                "Ultra natural look",
+                "Lebih kuat & tahan lama",
+                "Customize shape & length",
+                "Tidak merusak kuku asli"
+            ],
+            "price": "IDR 250.000 - 350.000",
+            "whatsappText": "Halo, saya mau booking Soft Gel Extension",
+            "buttonText": "Book Now",
+            "isPrimary": true
+        },
+        {
+            "icon": "🧼",
+            "name": "Removal (Soak-off)",
+            "description": "Lepas gel polish atau extension dengan aman menggunakan teknik soak-off. Tanpa merusak kuku asli.",
+            "features": [
+                "Soak-off aman",
+                "Tidak pakai kikir keras",
+                "Kuku tetap sehat",
+                "+ Vitamin kuku gratis"
+            ],
+            "price": "IDR 50.000 - 80.000",
+            "whatsappText": "Halo, saya mau booking Removal",
+            "buttonText": "Book Removal",
+            "isPrimary": false
+        }
+    ]
+}
