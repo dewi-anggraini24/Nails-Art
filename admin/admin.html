@@ -14,20 +14,20 @@
     <div class="login-screen" id="loginScreen">
         <div class="login-card">
             <div class="login-header">
-                <h1>🔐 Admin Login</h1>
-                <p>Nail Art by Dewi Salon</p>
+                <h1>👋 Welcome Back!</h1>
+                <p>Login to manage Dewi Salon</p>
             </div>
             <form id="loginForm" class="login-form">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="Enter username" required>
+                    <input type="text" id="username" placeholder="Enter your username" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter password" required>
+                    <input type="password" id="password" placeholder="Enter your password" required>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
-                <p class="login-hint">Default: admin / admin123</p>
+                <button type="submit" class="btn btn-primary btn-block">Login to Dashboard</button>
+                <p class="login-hint">Tip: Default login is <strong>admin</strong> / <strong>admin123</strong></p>
             </form>
         </div>
     </div>
@@ -56,14 +56,14 @@
                     <span class="icon">💬</span> Testimonials
                 </a>
                 <a href="#" class="nav-item" data-section="stats">
-                    <span class="icon">📊</span> Social Proof Stats
+                    <span class="icon">📊</span> Social Proof
                 </a>
                 <a href="#" class="nav-item" data-section="settings">
                     <span class="icon">⚙️</span> Settings
                 </a>
             </nav>
             <div class="sidebar-footer">
-                <button class="btn btn-outline btn-block" id="logoutBtn">Logout</button>
+                <button class="btn btn-outline btn-block" id="logoutBtn">Log Out</button>
             </div>
         </aside>
 
@@ -71,14 +71,17 @@
         <main class="main-content">
             <!-- Header -->
             <header class="content-header">
-                <h1 id="sectionTitle">Manage Packages</h1>
+                <div>
+                    <h1 id="sectionTitle">Manage Packages</h1>
+                    <p style="color: var(--text-gray); font-size: 14px; margin-top: 4px;">Manage your services and offerings here.</p>
+                </div>
                 <div class="header-actions">
-                    <button class="btn btn-primary" id="addNewBtn">
-                        <span>+</span> Add New
-                    </button>
                     <a href="../index.html" target="_blank" class="btn btn-secondary">
-                        <span>👁️</span> View Website
+                        <span>↗️</span> View Live Site
                     </a>
+                    <button class="btn btn-primary" id="addNewBtn">
+                        <span>+</span> Add New Item
+                    </button>
                 </div>
             </header>
 
@@ -178,52 +181,58 @@
                 <div class="settings-grid">
                     <div class="settings-card">
                         <h3>📊 Social Proof Statistics</h3>
+                        <p style="color: var(--text-gray); font-size: 14px; margin-bottom: 24px;">Update the numbers that show up on your landing page to build trust.</p>
                         <form id="statsForm">
-                            <div class="form-group">
-                                <label>Total Customers</label>
-                                <input type="number" id="totalCustomers" placeholder="500" required>
-                                <small>Angka akan di-animate dari 0</small>
+                            <div class="form-group-inline">
+                                <div class="form-group">
+                                    <label>Total Customers</label>
+                                    <input type="number" id="totalCustomers" placeholder="e.g., 500" required>
+                                    <small class="form-help">Total happy customers served.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label>Average Rating</label>
+                                    <input type="text" id="avgRating" placeholder="e.g., 4.9" required>
+                                    <small class="form-help">Your average rating (out of 5).</small>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Average Rating</label>
-                                <input type="text" id="avgRating" placeholder="4.9" required>
-                                <small>Format: 4.9 (out of 5)</small>
-                            </div>
-                            <div class="form-group">
-                                <label>Total Reviews</label>
-                                <input type="text" id="totalReviews" placeholder="200+" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Instagram Followers (in K)</label>
-                                <input type="number" id="igFollowers" placeholder="10" required>
-                                <small>Contoh: 10 untuk 10K followers</small>
+                            <div class="form-group-inline">
+                                <div class="form-group">
+                                    <label>Total Reviews</label>
+                                    <input type="text" id="totalReviews" placeholder="e.g., 200+" required>
+                                    <small class="form-help">Number of reviews received.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label>Instagram Followers (k)</label>
+                                    <input type="number" id="igFollowers" placeholder="e.g., 10" required>
+                                    <small class="form-help">Enter '10' for 10k followers.</small>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Years of Experience</label>
-                                <input type="number" id="yearsExp" placeholder="3" required>
+                                <input type="number" id="yearsExp" placeholder="e.g., 3" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Save Statistics</button>
                         </form>
                     </div>
                     
                     <div class="settings-card">
-                        <h3>💡 Preview</h3>
-                        <div style="padding: 20px; background: #f5f5f5; border-radius: 12px;">
+                        <h3>💡 Live Preview</h3>
+                        <div style="padding: 24px; background: #f9f9f9; border-radius: 12px; border: 1px dashed var(--border-color);">
                             <div style="margin-bottom: 20px;">
                                 <strong style="font-size: 32px; color: #d9b18a;" id="previewCustomers">500+</strong>
-                                <p style="color: #666; margin-top: 8px;">Pelanggan Puas</p>
+                                <p style="color: #666; margin-top: 4px; font-size: 14px;">Pelanggan Puas</p>
                             </div>
                             <div style="margin-bottom: 20px;">
                                 <strong style="font-size: 32px; color: #d9b18a;" id="previewRating">4.9/5</strong>
-                                <p style="color: #666; margin-top: 8px;">Rating dari <span id="previewReviews">200+</span> Reviews</p>
+                                <p style="color: #666; margin-top: 4px; font-size: 14px;">Rating dari <span id="previewReviews">200+</span> Reviews</p>
                             </div>
                             <div style="margin-bottom: 20px;">
                                 <strong style="font-size: 32px; color: #d9b18a;" id="previewIG">10K+</strong>
-                                <p style="color: #666; margin-top: 8px;">Instagram Followers</p>
+                                <p style="color: #666; margin-top: 4px; font-size: 14px;">Instagram Followers</p>
                             </div>
                             <div>
                                 <strong style="font-size: 32px; color: #d9b18a;" id="previewYears">3</strong>
-                                <p style="color: #666; margin-top: 8px;">Tahun Berpengalaman</p>
+                                <p style="color: #666; margin-top: 4px; font-size: 14px;">Tahun Berpengalaman</p>
                             </div>
                         </div>
                     </div>
@@ -239,16 +248,17 @@
                             <div class="form-group">
                                 <label>WhatsApp Number</label>
                                 <input type="text" id="whatsapp" placeholder="+62 812-3456-7890">
+                                <small class="form-help">Format: +62...</small>
                             </div>
                             <div class="form-group">
-                                <label>Instagram</label>
+                                <label>Instagram Username</label>
                                 <input type="text" id="instagram" placeholder="@dewisalon">
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
                                 <textarea id="address" rows="3" placeholder="Jl. Contoh Alamat No. 123, Jakarta"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <button type="submit" class="btn btn-primary">Save Contact Info</button>
                         </form>
                     </div>
                     
@@ -263,24 +273,26 @@
                                 <label>Sunday</label>
                                 <input type="text" id="sundayHours" placeholder="By Appointment">
                             </div>
-                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <button type="submit" class="btn btn-primary">Save Hours</button>
                         </form>
                     </div>
 
                     <div class="settings-card">
-                        <h3>Change Password</h3>
+                        <h3>Security</h3>
                         <form id="passwordForm">
                             <div class="form-group">
                                 <label>Current Password</label>
                                 <input type="password" id="currentPassword">
                             </div>
-                            <div class="form-group">
-                                <label>New Password</label>
-                                <input type="password" id="newPassword">
-                            </div>
-                            <div class="form-group">
-                                <label>Confirm Password</label>
-                                <input type="password" id="confirmPassword">
+                            <div class="form-group-inline">
+                                <div class="form-group">
+                                    <label>New Password</label>
+                                    <input type="password" id="newPassword">
+                                </div>
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <input type="password" id="confirmPassword">
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Update Password</button>
                         </form>
@@ -304,7 +316,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline" id="cancelBtn">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
                 </form>
             </div>
