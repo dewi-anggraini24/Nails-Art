@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Panel - Nail Art by Dewi Salon</title>
-  
+
   <!-- Fix: Explicitly link to config.yml for Vercel/Decap CMS -->
   <link href="/admin-cms/config.yml" type="text/yaml" rel="cms-config-url" />
-  
+
   <!-- Custom Admin Styles - Linear.app Inspired with Pastel Palette -->
   <style>
     /* Linear.app Inspired Theme for Decap CMS with Pastel Aesthetic */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
 
     :root {
       /* Pastel Linear Palette */
-      --bg-app: #faf6f2; /* Cream background */
+      --bg-app: #faf6f2;
+      /* Cream background */
       --bg-panel: #ffffff;
       --text-primary: #2d2d2d;
       --text-secondary: #6b6b6b;
-      
-      --brand-color: #d9b18a; /* Gold accent */
+      --text-light: #9a9a9a;
+
+      --brand-color: #d9b18a;
+      /* Gold accent */
       --brand-hover: #c49a6c;
-      
+      --brand-dark: #c19a72;
+
       --pastel-pink: #f7e8ef;
       --pastel-lilac: #f3e9ff;
-      
-      --border-subtle: rgba(217, 177, 138, 0.15); /* Gold tint border */
+
+      --border-subtle: rgba(217, 177, 138, 0.15);
+      /* Gold tint border */
       --shadow-soft: 0 4px 20px rgba(217, 177, 138, 0.08);
       --shadow-hover: 0 12px 32px rgba(217, 177, 138, 0.12);
-      
+      --shadow-xl: 0 20px 40px rgba(217, 177, 138, 0.15);
+
       --radius-lg: 16px;
       --radius-md: 12px;
       --radius-sm: 8px;
@@ -43,11 +50,188 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* === LOGIN SCREEN === */
+    /* Login Page Background */
+    [class*="AuthenticationPage"] {
+      background: radial-gradient(circle at 30% 20%, rgba(247, 232, 239, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(243, 233, 255, 0.4) 0%, transparent 50%),
+        var(--bg-app) !important;
+      min-height: 100vh !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 20px !important;
+      position: relative !important;
+      animation: fadeIn 0.6s ease !important;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Floating decorative elements */
+    [class*="AuthenticationPage"]::before {
+      content: '💅';
+      position: absolute;
+      top: 15%;
+      left: 10%;
+      font-size: 48px;
+      opacity: 0.3;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    [class*="AuthenticationPage"]::after {
+      content: '✨';
+      position: absolute;
+      bottom: 20%;
+      right: 15%;
+      font-size: 40px;
+      opacity: 0.3;
+      animation: float 7s ease-in-out infinite 1s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    /* Login Card Container */
+    [class*="AuthenticationPage"]>div {
+      background: white !important;
+      border-radius: 20px !important;
+      padding: 48px 40px !important;
+      max-width: 440px !important;
+      width: 100% !important;
+      box-shadow: var(--shadow-xl) !important;
+      border: 1px solid rgba(217, 177, 138, 0.1) !important;
+      animation: slideUp 0.5s ease !important;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Add Welcome Header */
+    [class*="AuthenticationPage"] h1::before {
+      content: '👋 Welcome Back!' !important;
+      display: block !important;
+      font-size: 24px !important;
+      font-weight: 600 !important;
+      color: var(--text-primary) !important;
+      margin-bottom: 8px !important;
+      font-family: 'Poppins', sans-serif !important;
+      background: none !important;
+      -webkit-background-clip: initial !important;
+      -webkit-text-fill-color: initial !important;
+    }
+
+    [class*="AuthenticationPage"] h1::after {
+      content: 'Login to manage Nail Art by Dewi Salon' !important;
+      display: block !important;
+      font-size: 14px !important;
+      font-weight: 400 !important;
+      color: var(--text-secondary) !important;
+      margin-top: 12px !important;
+      margin-bottom: 32px !important;
+      font-family: 'Inter', sans-serif !important;
+    }
+
+    /* Hide original h1 text */
+    [class*="AuthenticationPage"] h1 {
+      font-size: 0 !important;
+      margin-bottom: 0 !important;
+      text-align: center !important;
+    }
+
+    /* Login Button */
+    [class*="AuthenticationPage"] button,
+    button[class*="LoginButton"] {
+      background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%) !important;
+      color: white !important;
+      border: none !important;
+      border-radius: 8px !important;
+      padding: 12px 24px !important;
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+      transition: all 0.2s ease !important;
+      width: 100% !important;
+      margin-top: 24px !important;
+      cursor: pointer !important;
+    }
+
+    [class*="AuthenticationPage"] button:hover,
+    button[class*="LoginButton"]:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+      background: linear-gradient(135deg, #1a1a1a 0%, #000 100%) !important;
+    }
+
+    /* Login Form Labels */
+    [class*="AuthenticationPage"] label {
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      color: var(--text-dark) !important;
+      margin-bottom: 8px !important;
+      display: block !important;
+    }
+
+    /* Login Form Inputs */
+    [class*="AuthenticationPage"] input {
+      width: 100% !important;
+      padding: 10px 14px !important;
+      border: 1px solid var(--border-subtle) !important;
+      border-radius: 8px !important;
+      font-size: 14px !important;
+      transition: all 0.2s ease !important;
+      background: white !important;
+      font-family: 'Inter', sans-serif !important;
+    }
+
+    [class*="AuthenticationPage"] input:focus {
+      outline: none !important;
+      border-color: var(--brand-color) !important;
+      box-shadow: 0 0 0 3px rgba(217, 177, 138, 0.15) !important;
+    }
+
+    /* Add subtle hint below login */
+    [class*="AuthenticationPage"] form::after {
+      content: '🔒 Secure login powered by GitHub OAuth';
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(217, 177, 138, 0.1);
+    }
+
     /* === SIDEBAR === */
     [class*="AppHeader"] {
       background-color: var(--bg-panel) !important;
       border-right: 1px solid var(--border-subtle) !important;
-      box-shadow: 2px 0 24px rgba(0,0,0,0.02) !important;
+      box-shadow: 2px 0 24px rgba(0, 0, 0, 0.02) !important;
     }
 
     /* Sidebar Links */
@@ -75,7 +259,7 @@
       font-weight: 600 !important;
       box-shadow: 0 2px 8px rgba(217, 177, 138, 0.1) !important;
     }
-    
+
     /* Sidebar Icons */
     [class*="IconWrapper"] {
       color: inherit !important;
@@ -84,59 +268,59 @@
 
     /* === TOP BAR === */
     [class*="CollectionTop"] {
-        background-color: transparent !important;
-        border-bottom: none !important;
-        padding: 32px 40px 16px !important;
-        margin-bottom: 16px !important;
+      background-color: transparent !important;
+      border-bottom: none !important;
+      padding: 32px 40px 16px !important;
+      margin-bottom: 16px !important;
     }
-    
+
     /* Search Bar */
     [class*="SearchInput"] {
-        background: white !important;
-        border: 1px solid var(--border-subtle) !important;
-        padding: 10px 16px !important;
-        border-radius: 100px !important;
-        box-shadow: var(--shadow-soft) !important;
-        transition: all 0.2s ease !important;
+      background: white !important;
+      border: 1px solid var(--border-subtle) !important;
+      padding: 10px 16px !important;
+      border-radius: 100px !important;
+      box-shadow: var(--shadow-soft) !important;
+      transition: all 0.2s ease !important;
     }
-    
+
     [class*="SearchInput"]:focus {
-        border-color: var(--brand-color) !important;
-        box-shadow: 0 0 0 3px rgba(217, 177, 138, 0.15) !important;
-        width: 300px !important;
+      border-color: var(--brand-color) !important;
+      box-shadow: 0 0 0 3px rgba(217, 177, 138, 0.15) !important;
+      width: 300px !important;
     }
 
     /* === CARDS (Content Items) === */
     [class*="Card"] {
-        background: white !important;
-        border: 1px solid white !important;
-        border-radius: var(--radius-lg) !important;
-        box-shadow: var(--shadow-soft) !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        margin-bottom: 20px !important;
-        overflow: visible !important;
-        position: relative !important;
+      background: white !important;
+      border: 1px solid white !important;
+      border-radius: var(--radius-lg) !important;
+      box-shadow: var(--shadow-soft) !important;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      margin-bottom: 20px !important;
+      overflow: visible !important;
+      position: relative !important;
     }
 
     /* Card Hover Effect */
     [class*="Card"]:hover {
-        transform: translateY(-4px) !important;
-        box-shadow: var(--shadow-hover) !important;
-        border-color: var(--pastel-lilac) !important;
+      transform: translateY(-4px) !important;
+      box-shadow: var(--shadow-hover) !important;
+      border-color: var(--pastel-lilac) !important;
     }
-    
+
     /* Card Thumbnail Images */
     [class*="Card"] img {
-        border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
-        max-height: 200px !important;
-        object-fit: cover !important;
-        background: var(--pastel-lilac) !important;
-        border-bottom: 1px solid var(--border-subtle) !important;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
+      max-height: 200px !important;
+      object-fit: cover !important;
+      background: var(--pastel-lilac) !important;
+      border-bottom: 1px solid var(--border-subtle) !important;
     }
 
     /* === BUTTONS === */
-    button, 
-    [class*="Button"], 
+    button,
+    [class*="Button"],
     a[class*="Button"] {
       font-family: 'Inter', sans-serif !important;
       border-radius: 8px !important;
@@ -147,9 +331,8 @@
     }
 
     /* Primary Action Buttons */
-    button[class*="confirm"], 
+    button[class*="confirm"],
     [class*="Button"][class*="Primary"],
-    button[class*="LoginButton"],
     [class*="AppHeader"] button {
       background: linear-gradient(135deg, var(--brand-color) 0%, var(--brand-dark) 100%) !important;
       color: white !important;
@@ -157,7 +340,7 @@
       box-shadow: 0 4px 12px rgba(217, 177, 138, 0.3) !important;
     }
 
-    button[class*="confirm"]:hover, 
+    button[class*="confirm"]:hover,
     [class*="Button"][class*="Primary"]:hover {
       transform: translateY(-1px);
       box-shadow: 0 6px 16px rgba(217, 177, 138, 0.4) !important;
@@ -170,51 +353,59 @@
       background-color: white !important;
       color: var(--text-primary) !important;
       border: 1px solid #e5e7eb !important;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
     }
 
     /* === TYPOGRAPHY === */
-    h1, h2, h3, h4 {
-        font-family: 'Poppins', sans-serif !important;
-        color: var(--text-primary) !important;
-        letter-spacing: -0.02em !important;
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Poppins', sans-serif !important;
+      color: var(--text-primary) !important;
+      letter-spacing: -0.02em !important;
     }
-    
+
     /* Collection Titles */
     h1 {
-        font-size: 28px !important;
-        font-weight: 600 !important;
-        background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-color) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      font-size: 28px !important;
+      font-weight: 600 !important;
+      background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     /* Form Styling */
     [class*="Field"] label {
-        font-size: 13px !important;
-        font-weight: 600 !important;
-        color: var(--text-secondary) !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.05em !important;
-        margin-bottom: 8px !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      color: var(--text-secondary) !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+      margin-bottom: 8px !important;
     }
 
-    input[type="text"], textarea, [class*="Control"] {
-        background: white !important;
-        border: 1px solid #e5e7eb !important;
-        border-radius: var(--radius-md) !important;
-        padding: 12px 16px !important;
-        transition: all 0.2s ease !important;
+    input[type="text"],
+    textarea,
+    [class*="Control"] {
+      background: white !important;
+      border: 1px solid #e5e7eb !important;
+      border-radius: var(--radius-md) !important;
+      padding: 12px 16px !important;
+      transition: all 0.2s ease !important;
     }
 
-    input[type="text"]:focus, textarea:focus {
-        border-color: var(--brand-color) !important;
-        box-shadow: 0 0 0 4px rgba(217, 177, 138, 0.1) !important;
+    input[type="text"]:focus,
+    textarea:focus {
+      border-color: var(--brand-color) !important;
+      box-shadow: 0 0 0 4px rgba(217, 177, 138, 0.1) !important;
     }
   </style>
 </head>
+
 <body>
   <!-- Include the Decap CMS script -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
+
 </html>
