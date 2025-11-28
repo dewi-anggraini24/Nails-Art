@@ -1,28 +1,24 @@
 {
-    "gallery": [
-        {
-            "image": "assets/images/nail-1.jpg",
-            "caption": "Simple cute line art"
-        },
-        {
-            "image": "assets/images/nail-2.jpg",
-            "caption": "Blush ombre gradient"
-        },
-        {
-            "image": "assets/images/nail-3.jpg",
-            "caption": "French with gold accent"
-        },
-        {
-            "image": "assets/images/nail-4.jpg",
-            "caption": "3D bow nail art"
-        },
-        {
-            "image": "assets/images/nail-5.jpg",
-            "caption": "Marble chrome nails"
-        },
-        {
-            "image": "assets/images/nail-6.jpg",
-            "caption": "Aura nails aesthetic"
-        }
-    ]
+  "gallery": [
+    {
+      "image": "/assets/images/gallery/nail-1.jpg",
+      "caption": "Blush ombre gradient"
+    },
+    {
+      "image": "assets/images/nail-3.jpg",
+      "caption": "French with gold accent"
+    },
+    {
+      "image": "assets/images/nail-4.jpg",
+      "caption": "3D bow nail art"
+    },
+    {
+      "image": "assets/images/nail-5.jpg",
+      "caption": "Marble chrome nails"
+    },
+    {
+      "image": "assets/images/nail-6.jpg",
+      "caption": "Aura nails aesthetic"
+    }
+  ]
 }
