@@ -7,6 +7,30 @@
   
   <!-- Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  <!-- Custom Admin Styles -->
+  <style>
+    /* Custom colors for admin panel */
+    :root {
+      --primary-color: #d9b18a;
+      --accent-color: #f7e8ef;
+    }
+    
+    /* Loading screen customization */
+    body {
+      background: linear-gradient(135deg, #f7e8ef 0%, #f3e9ff 100%);
+    }
+    
+    /* Custom button colors */
+    [class*="Button"] {
+      background-color: var(--primary-color) !important;
+    }
+    
+    /* Sidebar customization */
+    [class*="AppHeader"] {
+      background: linear-gradient(135deg, #d9b18a 0%, #d19b6c 100%) !important;
+    }
+  </style>
 </head>
 <body>
   <!-- A script to redirect users from the site's homepage to the CMS after they log in -->

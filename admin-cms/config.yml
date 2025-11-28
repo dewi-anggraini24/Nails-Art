@@ -6,6 +6,12 @@ backend:
   name: git-gateway
   branch: main # Change to 'master' if your default branch is master
 
+# Logo (optional)
+logo_url: https://nails-art.netlify.app/assets/images/logo.png
+
+# Site URL
+site_url: https://nails-art.netlify.app
+
 # Local development (set to false for production)
 # local_backend: true
 
