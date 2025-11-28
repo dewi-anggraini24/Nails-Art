@@ -1195,6 +1195,11 @@ section {
 /* ===================================
    FOOTER WITH GOOGLE MAPS
    =================================== */
+.footer {
+    background: var(--text-dark);
+    color: var(--white);
+}
+
 .footer-map {
     margin-bottom: var(--spacing-xl);
     padding: var(--spacing-lg) 0;
@@ -1227,6 +1232,7 @@ section {
     display: flex;
     gap: var(--spacing-sm);
     margin-top: var(--spacing-md);
+    flex-wrap: wrap;
 }
 
 .social-link {
@@ -1235,7 +1241,7 @@ section {
     gap: 6px;
     padding: 8px 16px;
     background: var(--gold-brown);
-    color: white;
+    color: white !important;
     text-decoration: none;
     border-radius: 20px;
     font-size: 14px;
@@ -1254,14 +1260,36 @@ section {
 
 .footer-note {
     font-size: 13px;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.7);
     margin-top: 4px;
 }
 
 .footer-credit {
     font-size: 13px;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.5);
     margin-top: 8px;
+}
+
+/* Footer content visibility fix */
+.footer-content {
+    color: var(--white);
+}
+
+.footer-brand h3,
+.footer-brand p,
+.footer-contact h4,
+.footer-contact p,
+.footer-hours h4,
+.footer-hours p {
+    color: var(--white) !important;
+}
+
+.footer a {
+    color: var(--gold-brown) !important;
+}
+
+.footer a:hover {
+    color: var(--gold-brown-dark) !important;
 }
 
 /* ===================================
