@@ -227,14 +227,20 @@
       border-top: 1px solid rgba(217, 177, 138, 0.1);
     }
 
-    /* === SIDEBAR === */
+    /* === DASHBOARD STYLES (Reset to Default for Stability) === */
+    /* 
+       Note: We have commented out the custom dashboard styles below because they were 
+       causing layout issues ("acak-acakan"). We are reverting to the default Decap CMS 
+       layout which is stable and clean, while keeping the beautiful Login page above.
+    */
+
+    /* 
     [class*="AppHeader"] {
       background-color: var(--bg-panel) !important;
       border-right: 1px solid var(--border-subtle) !important;
-      box-shadow: 2px 0 24px rgba(0, 0, 0, 0.02) !important;
+      box-shadow: 2px 0 24px rgba(0,0,0,0.02) !important;
     }
 
-    /* Sidebar Links */
     [class*="NavLink"] {
       border-radius: var(--radius-md) !important;
       margin: 4px 16px !important;
@@ -259,68 +265,64 @@
       font-weight: 600 !important;
       box-shadow: 0 2px 8px rgba(217, 177, 138, 0.1) !important;
     }
-
-    /* Sidebar Icons */
+    
     [class*="IconWrapper"] {
       color: inherit !important;
       opacity: 0.8;
     }
 
-    /* === TOP BAR === */
     [class*="CollectionTop"] {
-      background-color: transparent !important;
-      border-bottom: none !important;
-      padding: 32px 40px 16px !important;
-      margin-bottom: 16px !important;
+        background-color: transparent !important;
+        border-bottom: none !important;
+        padding: 32px 40px 16px !important;
+        margin-bottom: 16px !important;
     }
-
-    /* Search Bar */
+    
     [class*="SearchInput"] {
-      background: white !important;
-      border: 1px solid var(--border-subtle) !important;
-      padding: 10px 16px !important;
-      border-radius: 100px !important;
-      box-shadow: var(--shadow-soft) !important;
-      transition: all 0.2s ease !important;
+        background: white !important;
+        border: 1px solid var(--border-subtle) !important;
+        padding: 10px 16px !important;
+        border-radius: 100px !important;
+        box-shadow: var(--shadow-soft) !important;
+        transition: all 0.2s ease !important;
     }
-
+    
     [class*="SearchInput"]:focus {
-      border-color: var(--brand-color) !important;
-      box-shadow: 0 0 0 3px rgba(217, 177, 138, 0.15) !important;
-      width: 300px !important;
+        border-color: var(--brand-color) !important;
+        box-shadow: 0 0 0 3px rgba(217, 177, 138, 0.15) !important;
+        width: 300px !important;
     }
 
-    /* === CARDS (Content Items) === */
     [class*="Card"] {
-      background: white !important;
-      border: 1px solid white !important;
-      border-radius: var(--radius-lg) !important;
-      box-shadow: var(--shadow-soft) !important;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      margin-bottom: 20px !important;
-      overflow: visible !important;
-      position: relative !important;
+        background: white !important;
+        border: 1px solid white !important;
+        border-radius: var(--radius-lg) !important;
+        box-shadow: var(--shadow-soft) !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        margin-bottom: 20px !important;
+        overflow: visible !important;
+        position: relative !important;
     }
 
-    /* Card Hover Effect */
     [class*="Card"]:hover {
-      transform: translateY(-4px) !important;
-      box-shadow: var(--shadow-hover) !important;
-      border-color: var(--pastel-lilac) !important;
+        transform: translateY(-4px) !important;
+        box-shadow: var(--shadow-hover) !important;
+        border-color: var(--pastel-lilac) !important;
     }
-
-    /* Card Thumbnail Images */
+    
     [class*="Card"] img {
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
-      max-height: 200px !important;
-      object-fit: cover !important;
-      background: var(--pastel-lilac) !important;
-      border-bottom: 1px solid var(--border-subtle) !important;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
+        max-height: 200px !important;
+        object-fit: cover !important;
+        background: var(--pastel-lilac) !important;
+        border-bottom: 1px solid var(--border-subtle) !important;
     }
+    */
 
-    /* === BUTTONS === */
-    button,
-    [class*="Button"],
+    /* === BUTTONS (Kept simple) === */
+    /*
+    button, 
+    [class*="Button"], 
     a[class*="Button"] {
       font-family: 'Inter', sans-serif !important;
       border-radius: 8px !important;
@@ -330,8 +332,7 @@
       letter-spacing: 0.01em !important;
     }
 
-    /* Primary Action Buttons */
-    button[class*="confirm"],
+    button[class*="confirm"], 
     [class*="Button"][class*="Primary"],
     [class*="AppHeader"] button {
       background: linear-gradient(135deg, var(--brand-color) 0%, var(--brand-dark) 100%) !important;
@@ -340,66 +341,60 @@
       box-shadow: 0 4px 12px rgba(217, 177, 138, 0.3) !important;
     }
 
-    button[class*="confirm"]:hover,
+    button[class*="confirm"]:hover, 
     [class*="Button"][class*="Primary"]:hover {
       transform: translateY(-1px);
       box-shadow: 0 6px 16px rgba(217, 177, 138, 0.4) !important;
       filter: brightness(1.05);
     }
 
-    /* Secondary/Gray Buttons */
     [class*="Button"][class*="Gray"],
     [class*="Button"][class*="Light"] {
       background-color: white !important;
       color: var(--text-primary) !important;
       border: 1px solid #e5e7eb !important;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
     }
+    */
 
-    /* === TYPOGRAPHY === */
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: 'Poppins', sans-serif !important;
-      color: var(--text-primary) !important;
-      letter-spacing: -0.02em !important;
+    /* === TYPOGRAPHY (Kept minimal) === */
+    /*
+    h1, h2, h3, h4 {
+        font-family: 'Poppins', sans-serif !important;
+        color: var(--text-primary) !important;
+        letter-spacing: -0.02em !important;
     }
-
-    /* Collection Titles */
+    
     h1 {
-      font-size: 28px !important;
-      font-weight: 600 !important;
-      background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-color) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+        font-size: 28px !important;
+        font-weight: 600 !important;
+        background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-color) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
-    /* Form Styling */
     [class*="Field"] label {
-      font-size: 13px !important;
-      font-weight: 600 !important;
-      color: var(--text-secondary) !important;
-      text-transform: uppercase !important;
-      letter-spacing: 0.05em !important;
-      margin-bottom: 8px !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        color: var(--text-secondary) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        margin-bottom: 8px !important;
     }
 
-    input[type="text"],
-    textarea,
-    [class*="Control"] {
-      background: white !important;
-      border: 1px solid #e5e7eb !important;
-      border-radius: var(--radius-md) !important;
-      padding: 12px 16px !important;
-      transition: all 0.2s ease !important;
+    input[type="text"], textarea, [class*="Control"] {
+        background: white !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: var(--radius-md) !important;
+        padding: 12px 16px !important;
+        transition: all 0.2s ease !important;
     }
 
-    input[type="text"]:focus,
-    textarea:focus {
-      border-color: var(--brand-color) !important;
-      box-shadow: 0 0 0 4px rgba(217, 177, 138, 0.1) !important;
+    input[type="text"]:focus, textarea:focus {
+        border-color: var(--brand-color) !important;
+        box-shadow: 0 0 0 4px rgba(217, 177, 138, 0.1) !important;
     }
+    */
   </style>
 </head>
 
