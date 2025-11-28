@@ -1239,19 +1239,34 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 8px 16px;
+    padding: 10px 18px;
     background: var(--gold-brown);
-    color: white !important;
+    color: #ffffff !important;
     text-decoration: none;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
     transition: all var(--transition-fast);
+    box-shadow: 0 2px 8px rgba(217, 177, 138, 0.3);
 }
 
 .social-link:hover {
     background: var(--gold-brown-dark);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(217, 177, 138, 0.4);
+    color: #ffffff !important;
+}
+
+/* Ensure icon and text both visible */
+.social-link .social-icon {
+    font-size: 20px;
+    color: #ffffff !important;
+}
+
+.social-link:visited,
+.social-link:active,
+.social-link:focus {
+    color: #ffffff !important;
 }
 
 .social-icon {
