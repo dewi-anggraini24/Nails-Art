@@ -1238,34 +1238,46 @@ section {
 .social-link {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 18px;
-    background: var(--gold-brown);
-    color: #ffffff !important;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #ffffff;
+    color: var(--gold-brown) !important;
     text-decoration: none;
     border-radius: 25px;
     font-size: 15px;
     font-weight: 600;
     transition: all var(--transition-fast);
-    box-shadow: 0 2px 8px rgba(217, 177, 138, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--gold-brown);
 }
 
 .social-link:hover {
-    background: var(--gold-brown-dark);
+    background: var(--gold-brown);
+    color: #ffffff !important;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(217, 177, 138, 0.4);
-    color: #ffffff !important;
 }
 
 /* Ensure icon and text both visible */
 .social-link .social-icon {
     font-size: 20px;
-    color: #ffffff !important;
+    color: var(--gold-brown);
+    transition: color var(--transition-fast);
+}
+
+.social-link:hover .social-icon {
+    color: #ffffff;
 }
 
 .social-link:visited,
 .social-link:active,
 .social-link:focus {
+    color: var(--gold-brown) !important;
+}
+
+.social-link:hover:visited,
+.social-link:hover:active,
+.social-link:hover:focus {
     color: #ffffff !important;
 }
 
