@@ -8,51 +8,156 @@
   <!-- Fix: Explicitly link to config.yml for Vercel/Decap CMS -->
   <link href="/admin-cms/config.yml" type="text/yaml" rel="cms-config-url" />
   
-  <!-- Custom Admin Styles -->
+  <!-- Custom Admin Styles - Linear.app Inspired -->
   <style>
-    /* Custom colors for admin panel */
+    /* Linear.app Inspired Theme for Decap CMS */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
     :root {
-      --primary-color: #d9b18a;
-      --accent-color: #f7e8ef;
+      /* Linear Palette & Variables */
+      --bg-app: #f4f5f8;
+      --bg-panel: #ffffff;
+      --text-primary: #1a1a1a;
+      --text-secondary: #6b7280;
+      --brand-color: #d9b18a;
+      --brand-dark: #b08d6b;
+      --border-subtle: rgba(0, 0, 0, 0.08);
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
-    
-    /* Loading screen customization */
+
+    /* Global Reset */
     body {
-      background: linear-gradient(135deg, #f7e8ef 0%, #f3e9ff 100%);
+      font-family: 'Inter', -apple-system, system-ui, sans-serif !important;
+      background-color: var(--bg-app) !important;
+      color: var(--text-primary) !important;
+      -webkit-font-smoothing: antialiased;
     }
-    
-    /* Custom button colors */
-    [class*="Button"] {
-      background-color: var(--primary-color) !important;
-    }
-    
-    /* Sidebar customization */
+
+    /* Sidebar / Header Styling */
     [class*="AppHeader"] {
-      background: linear-gradient(135deg, #d9b18a 0%, #d19b6c 100%) !important;
+      background: var(--bg-panel) !important;
+      border-right: 1px solid var(--border-subtle) !important;
+      box-shadow: none !important;
     }
-    
-    /* Friendly UI enhancements */
+
+    /* Make header text dark */
+    [class*="AppHeader"] a, 
+    [class*="AppHeader"] button,
+    [class*="AppHeader"] span {
+      color: var(--text-primary) !important;
+    }
+
+    /* Active state in sidebar */
+    [class*="NavLink"].active {
+      background-color: rgba(217, 177, 138, 0.15) !important;
+      border-left: 3px solid var(--brand-color) !important;
+      color: var(--brand-dark) !important;
+    }
+
+    /* Main Content Area */
     [class*="CollectionTop"] {
-        padding: 20px !important;
-        background-color: #faf6f2 !important;
+        background: transparent !important;
+        border-bottom: 1px solid var(--border-subtle) !important;
+        padding: 24px 32px !important;
+    }
+
+    /* Button Styling - Linear Style */
+    /* Reset default button mess */
+    button, 
+    [class*="Button"], 
+    a[class*="Button"] {
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 500 !important;
+      border-radius: 6px !important;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      box-shadow: var(--shadow-sm) !important;
+      text-transform: none !important;
+      font-size: 14px !important;
+      height: auto !important;
+      padding: 8px 16px !important;
+      line-height: 1.5 !important;
+      white-space: nowrap !important;
+    }
+
+    /* Primary Buttons (Save, Publish, Login) */
+    button[class*="confirm"], 
+    [class*="Button"][class*="Primary"],
+    button[class*="LoginButton"] {
+      background-color: #2d2d2d !important; /* Dark almost black like Linear */
+      color: #ffffff !important;
+      border: 1px solid transparent !important;
+    }
+
+    button[class*="confirm"]:hover, 
+    [class*="Button"][class*="Primary"]:hover {
+      background-color: #000000 !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    }
+
+    /* Secondary Buttons (Cancel, etc) */
+    [class*="Button"][class*="Gray"],
+    [class*="Button"][class*="Light"] {
+      background-color: #ffffff !important;
+      color: var(--text-primary) !important;
+      border: 1px solid #e5e7eb !important;
+    }
+
+    [class*="Button"][class*="Gray"]:hover {
+      background-color: #f9fafb !important;
+      border-color: #d1d5db !important;
+    }
+
+    /* Fix text overflow in buttons */
+    span {
+        white-space: normal; /* Allow wrapping for normal text */
     }
     
-    h1, h2, h3 {
-        font-family: 'Poppins', sans-serif !important;
-        color: #2d2d2d !important;
+    button span {
+        white-space: nowrap !important; /* Prevent wrap in buttons */
     }
-    
-    /* Card styling in admin */
+
+    /* Card/List Item Styling */
     [class*="Card"] {
-        border-radius: 12px !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
-        border: 1px solid rgba(217, 177, 138, 0.2) !important;
-        transition: transform 0.2s ease;
+        background: var(--bg-panel) !important;
+        border: 1px solid var(--border-subtle) !important;
+        border-radius: 8px !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important;
+        transition: all 0.2s ease !important;
+        margin-bottom: 12px !important;
     }
-    
+
     [class*="Card"]:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+        box-shadow: var(--shadow-hover) !important;
+        border-color: rgba(217, 177, 138, 0.5) !important;
+    }
+
+    /* Form Inputs */
+    input[type="text"], 
+    textarea, 
+    [class*="Control"] {
+        background-color: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 6px !important;
+        padding: 10px 12px !important;
+        color: var(--text-primary) !important;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+    }
+
+    input[type="text"]:focus, 
+    textarea:focus {
+        border-color: var(--brand-color) !important;
+        box-shadow: 0 0 0 3px rgba(217, 177, 138, 0.2) !important;
+        outline: none !important;
+    }
+
+    /* Header Typography */
+    h1, h2, h3, h4, h5 {
+        color: var(--text-primary) !important;
+        font-weight: 600 !important;
+        letter-spacing: -0.02em !important;
     }
   </style>
 </head>
