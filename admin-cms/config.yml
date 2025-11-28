@@ -1,0 +1,152 @@
+# Netlify CMS Configuration
+# Documentation: https://decapcms.org/docs/configuration-options/
+
+# Backend configuration
+backend:
+  name: git-gateway
+  branch: main # Change to 'master' if your default branch is master
+
+# Local development
+local_backend: true
+
+# Media files configuration
+media_folder: "assets/images" # Where uploaded images will be stored
+public_folder: "/assets/images" # Path for accessing images in the frontend
+
+# Collections (content types)
+collections:
+  # Testimonials Collection
+  - name: "testimonials"
+    label: "Testimonials"
+    label_singular: "Testimonial"
+    folder: "_data/testimonials"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Customer Name", name: "name", widget: "string", required: true }
+      - { label: "Rating", name: "rating", widget: "select", options: ["5", "4", "3", "2", "1"], default: "5" }
+      - { label: "Review Text", name: "review", widget: "text", required: true }
+      - { label: "Avatar Image", name: "avatar", widget: "image", required: true, media_folder: "/assets/images/customers" }
+      - { label: "Before-After Image", name: "beforeAfter", widget: "image", required: true, media_folder: "/assets/images/before-after" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false, required: false }
+
+  # Social Proof Stats
+  - name: "stats"
+    label: "Social Proof Statistics"
+    label_singular: "Stats"
+    folder: "_data/stats"
+    create: false
+    delete: false
+    slug: "stats"
+    editor:
+      preview: false
+    fields:
+      - { label: "Total Customers", name: "totalCustomers", widget: "number", required: true, hint: "Number will be animated from 0" }
+      - { label: "Average Rating", name: "avgRating", widget: "string", required: true, pattern: ['^[0-5](\.[0-9])?$', "Must be between 0-5, e.g., 4.9"], hint: "Format: 4.9" }
+      - { label: "Total Reviews", name: "totalReviews", widget: "string", required: true, hint: "e.g., 200+" }
+      - { label: "Instagram Followers (in K)", name: "igFollowers", widget: "number", required: true, hint: "Enter number in thousands, e.g., 10 for 10K" }
+      - { label: "Years of Experience", name: "yearsExp", widget: "number", required: true }
+
+  # Packages (Gel Polish)
+  - name: "packages"
+    label: "Gel Polish Packages"
+    label_singular: "Package"
+    folder: "_data/packages"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Icon (Emoji)", name: "icon", widget: "string", required: true, hint: "e.g., 💅" }
+      - { label: "Package Name", name: "name", widget: "string", required: true }
+      - { label: "Description", name: "description", widget: "text", required: true }
+      - { label: "Price", name: "price", widget: "string", required: true, hint: "e.g., IDR 65.000" }
+      - { label: "Features", name: "features", widget: "list", required: true, hint: "List of features" }
+      - { label: "Featured Package", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Order", name: "order", widget: "number", default: 0, required: false, hint: "Display order (lower numbers first)" }
+
+  # Nail Art Tiers
+  - name: "tiers"
+    label: "Nail Art Tiers"
+    label_singular: "Tier"
+    folder: "_data/tiers"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Emoji", name: "emoji", widget: "string", required: true, hint: "e.g., 🌸" }
+      - { label: "Tier Name", name: "name", widget: "string", required: true }
+      - { label: "Description", name: "description", widget: "text", required: true }
+      - { label: "Examples", name: "examples", widget: "list", required: true, hint: "List of nail art examples" }
+      - { label: "Price Range", name: "priceRange", widget: "string", required: true, hint: "e.g., IDR 20.000 - 50.000" }
+      - { label: "Note", name: "note", widget: "string", required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Order", name: "order", widget: "number", default: 0, required: false }
+
+  # Extensions
+  - name: "extensions"
+    label: "Extensions & Add-ons"
+    label_singular: "Extension"
+    folder: "_data/extensions"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Icon (Emoji)", name: "icon", widget: "string", required: true }
+      - { label: "Service Name", name: "name", widget: "string", required: true }
+      - { label: "Description", name: "description", widget: "text", required: true }
+      - { label: "Price Range", name: "priceRange", widget: "string", required: true }
+      - { label: "Features", name: "features", widget: "list", required: true }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Order", name: "order", widget: "number", default: 0, required: false }
+
+  # Gallery
+  - name: "gallery"
+    label: "Gallery"
+    label_singular: "Gallery Item"
+    folder: "_data/gallery"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Image", name: "image", widget: "image", required: true, media_folder: "/assets/images/gallery" }
+      - { label: "Caption", name: "caption", widget: "string", required: true }
+      - { label: "Order", name: "order", widget: "number", default: 0, required: false }
+
+  # Settings
+  - name: "settings"
+    label: "Settings"
+    files:
+      - label: "Contact Information"
+        name: "contact"
+        file: "_data/settings/contact.json"
+        fields:
+          - { label: "WhatsApp Number", name: "whatsapp", widget: "string", required: true, hint: "+62 812-3456-7890" }
+          - { label: "Instagram Handle", name: "instagram", widget: "string", required: true, hint: "@dewisalon" }
+          - { label: "Address", name: "address", widget: "text", required: true }
+          - { label: "City", name: "city", widget: "string", required: true }
+          - { label: "Postal Code", name: "postalCode", widget: "string", required: false }
+          - { label: "Google Maps Embed URL", name: "mapsUrl", widget: "text", required: false, hint: "Full iframe src URL from Google Maps" }
+      
+      - label: "Business Hours"
+        name: "hours"
+        file: "_data/settings/hours.json"
+        fields:
+          - { label: "Weekday Hours", name: "weekdays", widget: "string", required: true, hint: "e.g., Senin - Jumat: Tutup" }
+          - { label: "Weekend Hours", name: "weekend", widget: "string", required: true, hint: "e.g., Sabtu & Minggu: 09.00 - 19.00 WIB" }
+          - { label: "Special Notice", name: "notice", widget: "string", required: false, hint: "Any special announcement" }
+      
+      - label: "SEO Settings"
+        name: "seo"
+        file: "_data/settings/seo.json"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string", required: true }
+          - { label: "Site Description", name: "description", widget: "text", required: true }
+          - { label: "Keywords", name: "keywords", widget: "string", required: true, hint: "Comma separated" }
+          - { label: "Site URL", name: "siteUrl", widget: "string", required: true, hint: "https://yoursite.com" }
+          - { label: "OG Image", name: "ogImage", widget: "image", required: false, media_folder: "/assets/images" }

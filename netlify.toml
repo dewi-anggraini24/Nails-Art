@@ -1,0 +1,23 @@
+# Netlify Build Configuration
+[build]
+  publish = "."
+  command = "echo 'No build command needed for static site'"
+
+# Redirect rules
+[[redirects]]
+  from = "/admin"
+  to = "/admin-cms/index.html"
+  status = 200
+
+# Headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Enable Netlify Identity
+[build.environment]
+  NODE_VERSION = "18"
