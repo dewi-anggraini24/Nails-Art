@@ -38,23 +38,6 @@ collections:
       - { label: "Before-After Image", name: "beforeAfter", widget: "image", required: true, media_folder: "/assets/images/before-after" }
       - { label: "Featured", name: "featured", widget: "boolean", default: false, required: false }
 
-  # Social Proof Stats
-  - name: "stats"
-    label: "Social Proof Statistics"
-    label_singular: "Stats"
-    folder: "_data/stats"
-    create: false
-    delete: false
-    slug: "stats"
-    editor:
-      preview: false
-    fields:
-      - { label: "Total Customers", name: "totalCustomers", widget: "number", required: true, hint: "Number will be animated from 0" }
-      - { label: "Average Rating", name: "avgRating", widget: "string", required: true, pattern: ['^[0-5](\.[0-9])?$', "Must be between 0-5, e.g., 4.9"], hint: "Format: 4.9" }
-      - { label: "Total Reviews", name: "totalReviews", widget: "string", required: true, hint: "e.g., 200+" }
-      - { label: "Instagram Followers (in K)", name: "igFollowers", widget: "number", required: true, hint: "Enter number in thousands, e.g., 10 for 10K" }
-      - { label: "Years of Experience", name: "yearsExp", widget: "number", required: true }
-
   # Packages (Gel Polish)
   - name: "packages"
     label: "Gel Polish Packages"
