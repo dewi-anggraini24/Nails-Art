@@ -4,11 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Panel - Nail Art by Dewi Salon</title>
-  <!-- Include the Netlify CMS script -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+  
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- This div is where the admin panel will be rendered -->
+  <!-- A script to redirect users from the site's homepage to the CMS after they log in -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin-cms/";
+          });
+        }
+      });
+    }
+  </script>
+  
+  <!-- Include the Decap CMS script -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
