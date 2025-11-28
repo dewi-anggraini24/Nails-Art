@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Panel - Nail Art by Dewi Salon</title>
   
-  <!-- Netlify Identity Widget -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  
   <!-- Custom Admin Styles -->
   <style>
     /* Custom colors for admin panel */
@@ -33,19 +30,6 @@
   </style>
 </head>
 <body>
-  <!-- A script to redirect users from the site's homepage to the CMS after they log in -->
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin-cms/";
-          });
-        }
-      });
-    }
-  </script>
-  
   <!-- Include the Decap CMS script -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>

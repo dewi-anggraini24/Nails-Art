@@ -3,8 +3,10 @@
 
 # Backend configuration
 backend:
-  name: git-gateway
+  name: github
+  repo: dewi-anggraini24/Nails-Art
   branch: main # Change to 'master' if your default branch is master
+  # base_url: https://your-auth-server.vercel.app # Required for Vercel deployment (see VERCEL_GUIDE.md)
 
 # Logo (optional)
 logo_url: https://nails-art.netlify.app/assets/images/logo.png
