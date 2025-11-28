@@ -36,32 +36,18 @@
 
     /* Sidebar / Header Styling */
     [class*="AppHeader"] {
-      background: #fbfbfb !important; /* Very subtle gray */
+      background-color: #fbfbfb !important; /* Very subtle gray */
       border-right: 1px solid var(--border-subtle) !important;
       box-shadow: none !important;
-      width: 260px !important; /* Fixed width for thin sidebar */
-    }
-
-    /* Fix Sidebar layout to be strictly vertical */
-    [class*="AppHeader"] > div {
-      flex-direction: column !important;
-      align-items: flex-start !important;
-      padding: 16px !important;
-      height: 100vh !important;
     }
 
     /* Sidebar Links */
     [class*="NavLink"] {
-      width: 100% !important;
-      padding: 8px 12px !important;
-      margin-bottom: 4px !important;
       border-radius: 6px !important;
-      display: flex !important;
-      align-items: center !important;
-      font-size: 14px !important;
-      font-weight: 500 !important;
+      margin: 4px 8px !important;
+      padding: 8px 12px !important;
       color: var(--text-secondary) !important;
-      border-left: none !important; /* Remove old active indicator */
+      font-weight: 500 !important;
     }
 
     [class*="NavLink"]:hover {
@@ -77,60 +63,36 @@
 
     /* Sidebar Icons */
     [class*="IconWrapper"] {
-      margin-right: 10px !important;
       color: inherit !important;
     }
 
     /* Top Bar (Breadcrumbs area) */
     [class*="CollectionTop"] {
-        height: 64px !important;
-        padding: 0 32px !important;
-        display: flex !important;
-        align-items: center !important;
         background-color: #ffffff !important; /* White header */
         border-bottom: 1px solid var(--border-subtle) !important;
-        margin-bottom: 24px !important;
+        padding: 20px 32px !important;
     }
 
-    /* Card/List Item Styling (Gallery Focused) */
+    /* Card/List Item Styling */
     [class*="Card"] {
         background: var(--bg-panel) !important;
         border: 1px solid var(--border-subtle) !important;
         border-radius: 8px !important;
         box-shadow: var(--shadow-sm) !important;
         transition: all 0.2s ease !important;
-        margin-bottom: 12px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        overflow: hidden !important;
+        margin-bottom: 16px !important;
     }
 
-    /* Gallery/Image Thumbnails within Cards */
+    /* Ensure images in cards don't break layout */
     [class*="Card"] img {
-        height: 160px !important;
-        width: 100% !important;
-        object-fit: cover !important;
-        border-bottom: 1px solid var(--border-subtle) !important;
-        background-color: #f4f5f8 !important;
-    }
-
-    /* Card Text Content */
-    [class*="Card"] [class*="CardContent"] {
-        padding: 12px 16px !important;
+        max-width: 100% !important;
+        border-radius: 8px 8px 0 0 !important;
     }
 
     [class*="Card"]:hover {
         transform: translateY(-2px);
         box-shadow: var(--shadow-hover) !important;
         border-color: rgba(217, 177, 138, 0.5) !important;
-    }
-
-    /* Grid Layout for Cards (Masonry-ish) */
-    [class*="CollectionMain"] > div {
-        display: grid !important;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
-        gap: 24px !important;
-        padding: 0 32px !important;
     }
     
     /* Fix Search Bar */
