@@ -10,8 +10,6 @@
 │   ├── index.html              # CMS admin interface
 │   └── config.yml              # CMS configuration (7 collections!)
 ├── 📁 _data/                   # Git-based data storage
-│   ├── 📁 testimonials/        # Customer reviews (MD files)
-│   ├── 📁 stats/               # Social proof numbers
 │   ├── 📁 packages/            # Gel polish packages
 │   ├── 📁 tiers/               # Nail art tiers
 │   ├── 📁 extensions/          # Extension services
@@ -38,22 +36,7 @@
 
 ### 2. **Collections Configured:**
 
-#### a. **Testimonials** 💬
-- Customer Name
-- Rating (1-5 stars)
-- Review Text
-- Avatar Image (upload)
-- Before-After Image (upload)
-- Featured toggle
-
-#### b. **Social Proof Stats** 📊
-- Total Customers (animated counter)
-- Average Rating
-- Total Reviews
-- Instagram Followers
-- Years of Experience
-
-#### c. **Gel Polish Packages** 💰
+#### a. **Gel Polish Packages** 💰
 - Icon (emoji)
 - Package Name
 - Description
@@ -201,7 +184,6 @@ git push
 
 | Feature | Status |
 |---------|--------|
-| Admin edit testimonials | ✅ Yes |
 | Users see changes | ❌ NO! |
 | Data sync across devices | ❌ NO! |
 | Data persistent | ❌ Browser only |
@@ -213,7 +195,6 @@ git push
 
 | Feature | Status |
 |---------|--------|
-| Admin edit testimonials | ✅ Yes |
 | Users see changes | ✅ YES! |
 | Data sync across devices | ✅ YES! |
 | Data persistent | ✅ Git (forever!) |
@@ -242,39 +223,6 @@ git push
 3. Edit price in form
 4. Click Publish
 5. Done! Auto-deploy
-
-### ✅ Add Testimonials (Your Main Need):
-
-**Old way**:
-1. Edit HTML
-2. Copy testimonial structure
-3. Update fields manually
-4. Upload images via FTP
-5. Update image paths
-6. Push code
-
-**New way**:
-1. Open `/admin`
-2. Click "New Testimonial"
-3. Fill form
-4. Upload images (drag & drop)
-5. Click Publish
-6. Done!
-
-### ✅ Update Stats:
-
-**Old way**:
-1. Edit HTML
-2. Find data-target attributes
-3. Update numbers
-4. Push code
-
-**New way**:
-1. Open `/admin` → Stats
-2. Edit numbers in form
-3. See preview
-4. Click Publish
-5. Done!
 
 ---
 
@@ -382,17 +330,14 @@ git push
 - [x] Identity enabled
 - [x] Git Gateway enabled
 - [x] Can login to `/admin`
-- [x] Can edit testimonial
 - [x] Changes appear on site
 - [x] Multiple collections working
 - [x] Image upload working
 
 ### ✅ Production Ready If:
-- [ ] Real testimonials added
 - [ ] Real prices updated
 - [ ] Real contact info updated
 - [ ] Real images uploaded
-- [ ] Stats updated
 - [ ] Tested on mobile
 - [ ] Custom domain (optional)
 - [ ] Google Analytics (optional)

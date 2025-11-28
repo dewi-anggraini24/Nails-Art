@@ -194,8 +194,7 @@ h1, h2, h3, h4, h5, h6 {
 .package-card,
 .tier-card,
 .extension-card,
-.gallery-item,
-.testimonial-card {
+.gallery-item {
     background: rgba(255, 255, 255, 0.7) !important;
     backdrop-filter: blur(20px) !important;
     border: 1px solid rgba(217, 177, 138, 0.1) !important;
@@ -230,8 +229,7 @@ h1, h2, h3, h4, h5, h6 {
 .package-card:hover,
 .tier-card:hover,
 .extension-card:hover,
-.gallery-item:hover,
-.testimonial-card:hover {
+.gallery-item:hover {
     transform: translateY(-4px) !important;
     box-shadow: var(--shadow-lg) !important;
     border-color: rgba(217, 177, 138, 0.2) !important;
@@ -266,74 +264,9 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto 48px;
 }
 
-/* ===================================
-   TESTIMONIALS ENHANCEMENTS
-   =================================== */
-.testimonial-card {
-    padding: 32px !important;
-}
 
-.testimonial-stars {
-    color: var(--gold-brown) !important;
-    font-size: 18px !important;
-    letter-spacing: 2px;
-    margin-bottom: 16px;
-}
 
-.testimonial-text {
-    font-size: 15px !important;
-    line-height: 1.7 !important;
-    color: var(--text-gray) !important;
-    margin-bottom: 20px !important;
-}
 
-.testimonial-author {
-    font-weight: 600 !important;
-    font-size: 15px !important;
-    color: var(--text-dark) !important;
-}
-
-/* ===================================
-   STATS SECTION (Linear-style)
-   =================================== */
-.stats-section {
-    background: linear-gradient(135deg, 
-        rgba(247, 232, 239, 0.25) 0%, 
-        rgba(243, 233, 255, 0.25) 100%) !important;
-    border-top: var(--border-subtle);
-    border-bottom: var(--border-subtle);
-}
-
-.stat-card {
-    background: rgba(255, 255, 255, 0.6) !important;
-    backdrop-filter: blur(10px) !important;
-    border: var(--border-subtle) !important;
-    border-radius: 12px !important;
-    padding: 32px 24px !important;
-    text-align: center;
-    transition: all var(--transition-smooth) !important;
-}
-
-.stat-card:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: var(--shadow-md) !important;
-    background: rgba(255, 255, 255, 0.75) !important;
-}
-
-.stat-number {
-    font-size: clamp(40px, 6vw, 56px) !important;
-    font-weight: 700 !important;
-    color: var(--gold-brown) !important;
-    line-height: 1.1 !important;
-    letter-spacing: -0.02em !important;
-}
-
-.stat-label {
-    font-size: 15px !important;
-    color: var(--text-gray) !important;
-    font-weight: 500 !important;
-    margin-top: 8px !important;
-}
 
 /* ===================================
    FOOTER ENHANCEMENTS
@@ -426,8 +359,7 @@ h1, h2, h3, h4, h5, h6 {
         padding: 64px 20px;
     }
     
-    .package-card,
-    .testimonial-card {
+    .package-card {
         padding: 24px !important;
     }
 }
@@ -467,7 +399,6 @@ a:focus-visible {
 }
 
 .package-card,
-.testimonial-card,
 .cta-primary {
     will-change: transform;
 }

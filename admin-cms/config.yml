@@ -21,23 +21,6 @@ public_folder: "/assets/images" # Path for accessing images in the frontend
 
 # Collections (content types)
 collections:
-  # Testimonials Collection
-  - name: "testimonials"
-    label: "Testimonials"
-    label_singular: "Testimonial"
-    folder: "_data/testimonials"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    editor:
-      preview: false
-    fields:
-      - { label: "Customer Name", name: "name", widget: "string", required: true }
-      - { label: "Rating", name: "rating", widget: "select", options: ["5", "4", "3", "2", "1"], default: "5" }
-      - { label: "Review Text", name: "review", widget: "text", required: true }
-      - { label: "Avatar Image", name: "avatar", widget: "image", required: true, media_folder: "/assets/images/customers" }
-      - { label: "Before-After Image", name: "beforeAfter", widget: "image", required: true, media_folder: "/assets/images/before-after" }
-      - { label: "Featured", name: "featured", widget: "boolean", default: false, required: false }
-
   # Packages (Gel Polish)
   - name: "packages"
     label: "Gel Polish Packages"

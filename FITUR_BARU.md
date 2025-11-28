@@ -2,46 +2,19 @@
 
 ## 📊 Ringkasan Fitur Yang Ditambahkan
 
-Semua 5 fitur yang diminta sudah berhasil diimplementasikan dengan data dummy:
+Berikut adalah status fitur yang diminta:
 
-✅ **1. Testimonial/Reviews Section**  
+❌ **1. Testimonial/Reviews Section** (Removed per user request)
 ✅ **2. Floating WhatsApp Button**  
 ✅ **3. Google Maps + Lokasi**  
-✅ **4. Social Proof Numbers**  
+❌ **4. Social Proof Numbers** (Removed per user request)
 ✅ **5. SEO Meta Tags**  
 
 ---
 
-## 1️⃣ TESTIMONIAL/REVIEWS SECTION ⭐
+## 1️⃣ TESTIMONIAL/REVIEWS SECTION ⭐ (REMOVED)
 
-### Fitur:
-- 6 review cards dengan dummy data
-- Rating bintang (5 stars & 4 stars)
-- Customer avatars dengan border gold
-- Before-after images dengan hover zoom effect
-- Responsive grid layout (1 column mobile, 2-3 desktop)
-- Smooth scroll animations
-
-### Lokasi:
-- **Section**: Setelah Gallery, sebelum Booking
-- **HTML**: Baris ~389-582 di `index.html`
-- **CSS**: Baris ~1032-1176 di `style.css`
-
-### Data Dummy:
-```
-1. Sarah M. (5★) - "Nail artnya detail banget..."
-2. Dina A. (5★) - "Tempatnya bersih dan nyaman..."
-3. Laras K. (5★) - "Extension natural banget..."
-4. Mira S. (4★) - "Desain lucu-lucu..."
-5. Putri L. (5★) - "Pelayanan ramah..."
-6. Nina R. (5★) - "Best nail art experience..."
-```
-
-### Cara Ganti Nanti:
-1. Edit langsung di HTML (`index.html`)
-2. Update customer name, review text, rating
-3. Ganti foto customer & before-after (lihat `IMAGES_NEEDED.md`)
-4. Atau via admin panel (coming soon - task #8)
+*Fitur ini telah dihapus sesuai permintaan user.*
 
 ---
 
@@ -112,46 +85,9 @@ DKI Jakarta, Indonesia
 
 ---
 
-## 4️⃣ SOCIAL PROOF NUMBERS 📊
+## 4️⃣ SOCIAL PROOF NUMBERS 📊 (REMOVED)
 
-### Fitur:
-- 4 stat cards dengan animated counters
-- Gradient background (pastel pink → lilac)
-- Counter animation on scroll (0 → target number)
-- Emoji icons untuk setiap stat
-- Responsive grid (2x2 mobile, 4 columns desktop)
-
-### Lokasi:
-- **Section**: Setelah Hero, sebelum Why Choose Us
-- **HTML**: Baris ~114-141 di `index.html`
-- **CSS**: Baris ~969-1030 di `style.css`
-- **JavaScript**: Baris ~317-348 di `script.js`
-
-### Data Dummy:
-```
-👥 500+ Pelanggan Puas (animated counter)
-⭐ 4.9/5 Rating dari 200+ Reviews (static)
-📸 10K+ Instagram Followers (animated counter)
-🏆 3 Tahun Berpengalaman (animated counter)
-```
-
-### Cara Ganti Angka:
-**Untuk angka dengan animasi**:
-```html
-<div class="stat-number" data-target="500">0</div>
-```
-Ganti `data-target="500"` jadi angka yang kamu mau.
-
-**Untuk angka static (kayak rating)**:
-```html
-<div class="stat-number">4.9<span class="stat-suffix">/5</span></div>
-```
-Ganti angkanya langsung.
-
-### Animation Behavior:
-- Trigger saat section masuk viewport (50% visible)
-- Counter animates dari 0 → target dalam 2 detik
-- Only runs once per page load
+*Fitur ini telah dihapus sesuai permintaan user.*
 
 ---
 

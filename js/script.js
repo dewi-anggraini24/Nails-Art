@@ -346,7 +346,7 @@ if (bubbleClose) {
     });
 }
 
-// Hide bubble when scrolling
+// === HIDE BUBBLE ON SCROLL ===
 let lastScrollTop = 0;
 window.addEventListener('scroll', debounce(() => {
     const bubble = document.getElementById('whatsappBubble');
@@ -357,66 +357,6 @@ window.addEventListener('scroll', debounce(() => {
     }
     lastScrollTop = st <= 0 ? 0 : st;
 }, 100));
-
-// === LOAD TESTIMONIALS FROM LOCALSTORAGE ===
-function loadTestimonialsFromStorage() {
-    const testimonials = localStorage.getItem('dewi_salon_testimonials');
-    if (!testimonials) return; // Use hardcoded data if no localStorage data
-    
-    try {
-        const data = JSON.parse(testimonials);
-        const testimonialsGrid = document.querySelector('.testimonials-grid');
-        
-        if (!testimonialsGrid || data.length === 0) return;
-        
-        testimonialsGrid.innerHTML = data.map(test => {
-            const stars = '★'.repeat(test.rating) + '★'.repeat(Math.max(0, 5 - test.rating)).replace(/★/g, '☆', test.rating);
-            const filledStars = '<span class="star filled">★</span>'.repeat(test.rating);
-            const emptyStars = '<span class="star">★</span>'.repeat(5 - test.rating);
-            
-            return `
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-header">
-                        <div class="customer-info">
-                            <div class="customer-avatar">
-                                <img src="${test.avatarUrl}" alt="${test.name}" onerror="this.src='https://via.placeholder.com/60/d9b18a/ffffff?text=${test.name.charAt(0)}'">
-                            </div>
-                            <div class="customer-details">
-                                <h4 class="customer-name">${test.name}</h4>
-                                <div class="rating">
-                                    ${filledStars}${emptyStars}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">
-                        "${test.review}"
-                    </p>
-                    <div class="before-after">
-                        <div class="ba-image">
-                            <img src="${test.beforeAfterUrl}" alt="Before After" onerror="this.src='https://via.placeholder.com/400x300/f5f5f5/d9b18a?text=Before+After'">
-                            <span class="ba-label">Before & After</span>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }).join('');
-        
-        // Re-observe animated elements
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            if (!el.classList.contains('visible')) {
-                observer.observe(el);
-            }
-        });
-    } catch (error) {
-        console.error('Error loading testimonials:', error);
-    }
-}
-
-// === LOAD DATA ON PAGE LOAD ===
-document.addEventListener('DOMContentLoaded', () => {
-    loadTestimonialsFromStorage();
-});
 
 // === CONSOLE LOG (REMOVE IN PRODUCTION) ===
 console.log('%c💅 Nail Art by Dewi Salon', 'font-size: 20px; color: #d9b18a; font-weight: bold;');
