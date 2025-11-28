@@ -6,13 +6,13 @@ backend:
   name: github
   repo: dewi-anggraini24/Nails-Art
   branch: main # Change to 'master' if your default branch is master
-  # base_url: https://your-auth-server.vercel.app # Required for Vercel deployment (see VERCEL_GUIDE.md)
+  base_url: https://decap-cms-auth.vercel.app/ # Community auth server for Vercel
 
 # Logo (optional)
-logo_url: https://nails-art.netlify.app/assets/images/logo.png
+logo_url: /assets/images/logo.png
 
 # Site URL
-site_url: https://nails-art.netlify.app
+site_url: https://nails-art-six.vercel.app
 
 # Local development (set to false for production)
 # local_backend: true
