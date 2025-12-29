@@ -3,7 +3,7 @@
     {
       "icon": "💅",
       "name": "Russian Manicure",
-      "description": "Dry Russian manicure tanpa rendam untuk membersihkan kutikula secara presisi, dilengkapi pembentukan kuku sesuai gaya pilihan. Tersedia tambahan overlay base gel untuk memperkuat kuku alami atau top coat untuk kilap dan perlindungan ekstra, meski tanpa warna.",
+      "description": "-",
       "price": "IDR 35.000",
       "features": [
         "Russian manicure presisi",
@@ -21,7 +21,7 @@
       "name": "Regular Gel Polish",
       "isPrimary": false,
       "icon": "💖",
-      "description": "Gel polish dengan hasil glossy tahan lama, memberikan tampilan kuku bersih dan terawat.",
+      "description": "-",
       "features": [
         "Russian manicure",
         "Basic color hingga 4 warna (termasuk glitter)",
@@ -34,7 +34,7 @@
     {
       "icon": "✨",
       "name": "Premium Gel Polish",
-      "description": "Diformulasikan dengan bahan bersertifikat halal untuk hasil yang lebih aman, bersih, dan nyaman digunakan.",
+      "description": " -",
       "price": "IDR 85.000",
       "features": [
         "Halal-certified premium formula",
