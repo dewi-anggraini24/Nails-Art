@@ -1,49 +1,50 @@
 {
-    "tiers": [
-        {
-            "emoji": "🌸",
-            "name": "Tier 1 – Simple Cute",
-            "description": "Desain minimalis yang tetap eye-catching",
-            "examples": [
-                "Line art tipis",
-                "French nails",
-                "Polkadots",
-                "Small foil accent",
-                "Minimalist shapes"
-            ],
-            "price": "+ IDR 20.000 - 50.000",
-            "note": "Harga bervariasi sesuai detail",
-            "featured": false
-        },
-        {
-            "emoji": "💫",
-            "name": "Tier 2 – Soft Glam",
-            "description": "Sentuhan glam yang tetap soft dan elegan",
-            "examples": [
-                "Blush nails",
-                "Ombre gradient",
-                "Marble simple",
-                "Chrome line",
-                "Glitter accent"
-            ],
-            "price": "+ IDR 60.000 - 100.000",
-            "note": "Kombinasi 2-3 teknik",
-            "featured": true
-        },
-        {
-            "emoji": "🎀",
-            "name": "Tier 3 – Extra Playful",
-            "description": "Statement nails yang bikin semua orang terpukau",
-            "examples": [
-                "3D nail art",
-                "Cute bows",
-                "Aura nails",
-                "Karakter lucu",
-                "Full custom design"
-            ],
-            "price": "+ IDR 120.000 - 200.000",
-            "note": "Detail kompleks & materials premium",
-            "featured": false
-        }
-    ]
+  "tiers": [
+    {
+      "emoji": "🌸",
+      "name": "TIER 1 ART",
+      "description": "Desain minimalis yang tetap eye-catching",
+      "examples": [
+        "Tiny shapes",
+        "classic french",
+        "cat eye",
+        "foil flakes",
+        "full chrome/glazed",
+        "single line art"
+      ],
+      "price": "+ IDR 2.000 - 3.000 / Design",
+      "note": "Harga bervariasi sesuai detail",
+      "featured": false
+    },
+    {
+      "emoji": "💫",
+      "name": "Tier 2 – Soft Glam",
+      "description": "Sentuhan glam yang tetap soft dan elegan",
+      "examples": [
+        "Blush nails",
+        "Ombre gradient",
+        "Marble simple",
+        "Chrome line",
+        "Glitter accent"
+      ],
+      "price": "+ IDR 60.000 - 100.000",
+      "note": "Kombinasi 2-3 teknik",
+      "featured": true
+    },
+    {
+      "emoji": "🎀",
+      "name": "Tier 3 – Extra Playful",
+      "description": "Statement nails yang bikin semua orang terpukau",
+      "examples": [
+        "3D nail art",
+        "Cute bows",
+        "Aura nails",
+        "Karakter lucu",
+        "Full custom design"
+      ],
+      "price": "+ IDR 120.000 - 200.000",
+      "note": "Detail kompleks & materials premium",
+      "featured": false
+    }
+  ]
 }
