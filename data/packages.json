@@ -9,7 +9,7 @@
         "Russian manicure",
         "Nail shaping",
         "Cuticle oil",
-        "Add on: Overlay"
+        "Add on: Top coat"
       ],
       "whatsappText": "Halo, saya mau booking Russian Manicure only",
       "buttonText": "Pilih Paket",
@@ -21,7 +21,7 @@
       "name": "Regular Gel Polish",
       "isPrimary": false,
       "icon": "💖",
-      "description": "-",
+      "description": "Start form:",
       "features": [
         "Russian manicure",
         "Basic color hingga 4 warna (termasuk glitter)",
@@ -34,13 +34,14 @@
     {
       "icon": "✨",
       "name": "Premium Gel Polish",
-      "description": " -",
+      "description": "Start form:",
       "price": "IDR 85.000",
       "features": [
+        "Russian manicure",
         "Halal-certified premium formula",
         "Warna lebih rich & pigmented",
         "Hasil lebih glossy dan tahan lama",
-        "Russian manicure",
+        "100+ pilihan warna",
         "Cuticle oil"
       ],
       "whatsappText": "Halo, saya mau booking Premium Gel Polish",
