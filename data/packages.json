@@ -2,51 +2,50 @@
   "packages": [
     {
       "icon": "💅",
-      "name": "Manicure Only",
-      "description": "Perawatan kuku dasar tanpa cat",
+      "name": "Russian Manicure",
+      "description": "Dry Russian manicure tanpa rendam untuk membersihkan kutikula secara presisi, dilengkapi pembentukan kuku sesuai gaya pilihan. Tersedia tambahan overlay base gel untuk memperkuat kuku alami atau top coat untuk kilap dan perlindungan ekstra, meski tanpa warna.",
       "price": "IDR 35.000",
       "features": [
-        "Dry manicure profesional",
-        "Rapikan bentuk kuku",
-        "Perawatan kutikula",
-        "Buffing & polish natural"
+        "Russian manicure presisi",
+        "Nail shaping",
+        "Cuticle oil",
+        "Add on: Top coat"
       ],
-      "whatsappText": "Halo, saya mau booking Manicure Only",
+      "whatsappText": "Halo, saya mau booking Russian Manicure only",
       "buttonText": "Pilih Paket",
       "isPrimary": false
     },
     {
-      "icon": "💖",
-      "name": "Regular Gel Polish",
-      "description": "Warna solid dengan hasil glossy sempurna",
+      "badge": "Popular ⭐",
       "price": "IDR 65.000",
+      "name": "Regular Gel Polish",
+      "isPrimary": false,
+      "icon": "💖",
+      "description": "Gel polish dengan hasil glossy tahan lama, memberikan tampilan kuku bersih dan terawat.",
       "features": [
-        "Manicure lengkap",
-        "Gel polish 1 warna",
-        "Glossy finish premium",
-        "Tahan 2-3 minggu",
-        "Pilihan 100+ warna"
+        "Russian manicure",
+        "Basic color hingga 4 warna (termasuk glitter)",
+        "100+ pilihan warna",
+        "Cuticle oil"
       ],
       "whatsappText": "Halo, saya mau booking Regular Gel Polish",
-      "buttonText": "Pilih Paket",
-      "isPrimary": true,
-      "badge": "Popular ⭐"
+      "buttonText": "Pilih Paket"
     },
     {
       "icon": "✨",
       "name": "Premium Gel Polish",
-      "description": "Kualitas terbaik dengan hasil maksimal",
+      "description": "Diformulasikan dengan bahan bersertifikat halal untuk hasil yang lebih aman, bersih, dan nyaman digunakan.",
       "price": "IDR 85.000",
       "features": [
-        "Manicure premium",
-        "Gel polish premium brand",
-        "Ultra glossy & pigmented",
-        "Tahan hingga 4 minggu",
-        "Extra shine & smooth"
+        "Halal-certified premium formula",
+        "Warna lebih rich & pigmented",
+        "Hasil lebih glossy dan tahan lama",
+        "Russian manicure",
+        "Cuticle oil"
       ],
       "whatsappText": "Halo, saya mau booking Premium Gel Polish",
       "buttonText": "Pilih Paket",
-      "isPrimary": false
+      "isPrimary": true
     }
   ]
 }
